@@ -1,7 +1,7 @@
 {
-    "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
-    "dest": "../../../dist/ahmed757/ngx-treant-js",
-    "whitelistedNonPeerDependencies": [
+    "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+    "dest": "dist",
+    "allowedNonPeerDependencies": [
         "jquery",
         "jquery-easing",
         "popper",

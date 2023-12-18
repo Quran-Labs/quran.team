@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { BasicPopoverComponent } from './demo-charts/basic-popover/basic-popover.component';
-import { NgxTreantJsModule } from '@ahmed757/ngx-treant-js';
+import { NgxTreantJsModule } from '../../lib/ngx-treant-js/dist';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 //import {MatIconModule} from '@angular/material/icon';
