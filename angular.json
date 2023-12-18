@@ -21,8 +21,8 @@
                         "aot": true,
                         "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
-                            "../lib/treant-js/Treant.css",
-                            "../lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.css",
+                            "lib/treant-js/Treant.css",
+                            "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.css",
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "src/styles.css"
                         ],
@@ -30,11 +30,11 @@
                             "node_modules/jquery/dist/jquery.min.js",
                             "node_modules/popper.js/dist/umd/popper.js",
                             "node_modules/bootstrap/dist/js/bootstrap.js",
-                            "../lib/treant-js/vendor/jquery.easing.js",
-                            "../lib/treant-js/vendor/jquery.mousewheel.js",
-                            "../lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.js",
-                            "../lib/treant-js/vendor/raphael.js",
-                            "../lib/treant-js/Treant.js"
+                            "lib/treant-js/vendor/jquery.easing.js",
+                            "lib/treant-js/vendor/jquery.mousewheel.js",
+                            "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.js",
+                            "lib/treant-js/vendor/raphael.js",
+                            "lib/treant-js/Treant.js"
                         ]
                     },
                     "configurations": {
@@ -94,8 +94,8 @@
                         "karmaConfig": "karma.conf.js",
                         "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
-                            "../lib/treant-js/Treant.css",
-                            "../lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.css",
+                            "lib/treant-js/Treant.css",
+                            "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.css",
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "src/styles.css"
                         ],
@@ -103,11 +103,11 @@
                             "node_modules/jquery/dist/jquery.min.js",
                             "node_modules/popper.js/dist/umd/popper.js",
                             "node_modules/bootstrap/dist/js/bootstrap.js",
-                            "../lib/treant-js/vendor/jquery.easing.js",
-                            "../lib/treant-js/vendor/jquery.mousewheel.js",
-                            "../lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.js",
-                            "../lib/treant-js/vendor/raphael.js",
-                            "../lib/treant-js/Treant.js"
+                            "lib/treant-js/vendor/jquery.easing.js",
+                            "lib/treant-js/vendor/jquery.mousewheel.js",
+                            "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.js",
+                            "lib/treant-js/vendor/raphael.js",
+                            "lib/treant-js/Treant.js"
                         ]
                     }
                 },
@@ -138,36 +138,36 @@
         },
         "@ahmed757/ngx-treant-js": {
             "projectType": "library",
-            "root": "projects/ahmed757/ngx-treant-js",
-            "sourceRoot": "projects/ahmed757/ngx-treant-js/src",
+            "root": "lib/ngx-treant-js",
+            "sourceRoot": "lib/ngx-treant-js/src",
             "prefix": "ngx-treant",
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-ng-packagr:build",
                     "options": {
-                        "tsConfig": "projects/ahmed757/ngx-treant-js/tsconfig.lib.json",
-                        "project": "projects/ahmed757/ngx-treant-js/ng-package.json"
+                        "tsConfig": "lib/ngx-treant-js/tsconfig.lib.json",
+                        "project": "lib/ngx-treant-js/ng-package.json"
                     },
                     "configurations": {
                         "production": {
-                            "tsConfig": "projects/ahmed757/ngx-treant-js/tsconfig.lib.prod.json"
+                            "tsConfig": "lib/ngx-treant-js/tsconfig.lib.prod.json"
                         }
                     }
                 },
                 "test": {
                     "builder": "@angular-devkit/build-angular:karma",
                     "options": {
-                        "main": "projects/ahmed757/ngx-treant-js/src/test.ts",
-                        "tsConfig": "projects/ahmed757/ngx-treant-js/tsconfig.spec.json",
-                        "karmaConfig": "projects/ahmed757/ngx-treant-js/karma.conf.js"
+                        "main": "lib/ngx-treant-js/src/test.ts",
+                        "tsConfig": "lib/ngx-treant-js/tsconfig.spec.json",
+                        "karmaConfig": "lib/ngx-treant-js/karma.conf.js"
                     }
                 },
                 "lint": {
                     "builder": "@angular-devkit/build-angular:tslint",
                     "options": {
                         "tsConfig": [
-                            "projects/ahmed757/ngx-treant-js/tsconfig.lib.json",
-                            "projects/ahmed757/ngx-treant-js/tsconfig.spec.json"
+                            "lib/ngx-treant-js/tsconfig.lib.json",
+                            "lib/ngx-treant-js/tsconfig.spec.json"
                         ],
                         "exclude": ["**/node_modules/**"]
                     }

@@ -64,7 +64,7 @@
         "popper": "^1.0.1",
         "popper.js": "^1.16.1",
         "rxjs": "~6.5.4",
-        "treant-js": "file:../lib/treant-js",
+        "treant-js": "file:lib/treant-js",
         "tslib": "^1.10.0",
         "zone.js": "~0.10.2"
     },
