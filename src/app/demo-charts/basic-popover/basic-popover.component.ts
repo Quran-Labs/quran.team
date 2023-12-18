@@ -6,7 +6,7 @@ import {
     TemplateRef,
     AfterViewInit,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router, NavigationEnd  } from '@angular/router'
 import { DemoAppService } from '../demo-charts.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -58,6 +58,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
 
     constructor(
         private route: ActivatedRoute,
+        private router: Router,
         private modalService: BsModalService,
         private formBuilder: FormBuilder
     ) {
@@ -123,13 +124,24 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     }
 
     ngOnInit(): void {
+        this.router.routeReuseStrategy.shouldReuseRoute = function(){
+            return false;
+        };
+        this.router.events.subscribe((evt) => {
+            if (evt instanceof NavigationEnd) {
+                this.router.navigated = false;
+                window.scrollTo(0, 0);
+            }
+        });
         this.tree_name = this.route.snapshot.paramMap.get('id');
         this.basicPopoverData = this.svc.getBasicPopoverData(this.tree_name);
         console.log("Starting with >\n"+ JSON.stringify(this.basicPopoverData));
     }
 
     onClick(obj): void {
-        console.log('onClick: ', obj);
+        if(obj.node.nodeHTMLclass.trim() === "rawi"){
+            this.router.navigate(['/tree', "hafs"]);
+        }
     }
 
     onUpdate(obj): void {
@@ -137,7 +149,8 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     }
 
     onHover(event): void {
-        if(event.node.nodeHTMLclass.trim().match(/^(?:rawi|)$/)){
+        if( (this.route.snapshot.params['id'] !== "top") &&
+         (event.node.nodeHTMLclass.trim().match(/^(?:rawi|)$/)) ){
             setTimeout(() => {
                 event.$('.popover-title').text(event.node.text.name);
             }, 100);
