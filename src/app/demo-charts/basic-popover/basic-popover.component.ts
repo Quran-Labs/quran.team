@@ -9,7 +9,7 @@ import {
 import { ActivatedRoute, Router, NavigationEnd  } from '@angular/router'
 import { DemoAppService } from '../demo-charts.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 
 @Component({
     selector: 'ngx-treant-demo-basic-popover',
@@ -21,7 +21,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     modalRef: BsModalRef;
     @ViewChild('template') modalTemplate: TemplateRef<any>;
 
-    registerForm: FormGroup;
+    registerForm: UntypedFormGroup;
 
     basicPopoverId = 'basic-popover';
     basicPopoverClass = 'basic-popover-chart';
@@ -60,7 +60,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private modalService: BsModalService,
-        private formBuilder: FormBuilder
+        private formBuilder: UntypedFormBuilder
     ) {
         this.svc = new DemoAppService();
     }

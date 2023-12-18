@@ -159,5 +159,7 @@
             }
         }
     },
-    "defaultProject": "quran-team"
+    "cli": {
+      "analytics": false
+    }
 }
