@@ -3,6 +3,7 @@
     "compilerOptions": {
         "outDir": "./out-tsc/app",
         "types": [],
+        "skipLibCheck": true,
         "paths": {
             "@ahmed757/*": [
                 "dist/ahmed757/ngx-treant-js/ahmed757-ngx-treant-js",

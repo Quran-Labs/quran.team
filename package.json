@@ -1,104 +1,104 @@
 {
-    "name": "quran-team",
-    "version": "0.1.0",
-    "author": "Tarek Eldeeb",
-    "scripts": {
-        "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build --base-href / --prod",
-        "clean": "rm -rf ./dist & rm -rf node_modules & npm cache clean --force",
-        "test": "ng test",
-        "lint": "ng lint",
-        "prettier-format": "prettier --config .prettierrc '**/*.{ts,js,html,css,json}' --write",
-        "e2e": "ng e2e",
-        "deploy": "gh-pages -d dist"
-    },
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
-        }
-    },
-    "commitlint": {
-        "extends": [
-            "@commitlint/config-conventional"
-        ]
-    },
-    "private": false,
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/AhmedAlatawi/ngx-treant-js.git"
-    },
-    "bugs": {
-        "url": "https://github.com/Quran-Labs/quran.team/issues"
-    },
-    "homepage": "https://quran.team",
-    "keywords": [
-        "quran",
-        "sanad",
-        "database",
-        "islam",
-        "ejaza",
-        "jquery",
-        "visualization",
-        "tree",
-        "diagrams",
-        "draws",
-        "charts",
-        "svg"
-    ],
-    "dependencies": {
-        "@ahmed757/ngx-treant-js": "^1.0.4",
-        "@angular/animations": "~9.0.7",
-        "@angular/common": "~9.0.7",
-        "@angular/compiler": "~9.0.7",
-        "@angular/core": "~9.0.7",
-        "@angular/forms": "^9.0.7",
-        "@angular/localize": "~9.0.7",
-        "@angular/platform-browser": "~9.0.7",
-        "@angular/platform-browser-dynamic": "~9.0.7",
-        "@angular/router": "~9.0.7",
-        "bootstrap": "4.5.0",
-        "jquery": "3.5.1",
-        "jquery-easing": "0.0.1",
-        "ngx-bootstrap": "^5.6.1",
-        "popper": "^1.0.1",
-        "popper.js": "^1.16.1",
-        "rxjs": "~6.5.4",
-        "treant-js": "file:lib/treant-js",
-        "tslib": "^1.10.0",
-        "zone.js": "~0.10.2"
-    },
-    "devDependencies": {
-        "@angular-devkit/build-angular": "~0.900.7",
-        "@angular-devkit/build-ng-packagr": "~0.900.7",
-        "@angular/cli": "~9.0.7",
-        "@angular/compiler-cli": "~9.0.7",
-        "@angular/language-service": "~9.0.7",
-        "@commitlint/cli": "^9.0.1",
-        "@commitlint/config-conventional": "^9.0.1",
-        "@types/jasmine": "~3.5.0",
-        "@types/jasminewd2": "~2.0.3",
-        "@types/jquery": "^3.3.38",
-        "@types/node": "^12.11.1",
-        "codelyzer": "^5.1.2",
-        "cz-conventional-changelog": "^3.2.0",
-        "gh-pages": "^6.0.0",
-        "husky": "^4.2.5",
-        "jasmine-core": "~3.5.0",
-        "jasmine-spec-reporter": "~4.2.1",
-        "karma": "~5.0.0",
-        "karma-chrome-launcher": "~3.1.0",
-        "karma-coverage-istanbul-reporter": "~2.1.0",
-        "karma-jasmine": "~2.0.1",
-        "karma-jasmine-html-reporter": "^1.4.2",
-        "lint-staged": "^10.2.11",
-        "ng-packagr": "^9.0.0",
-        "prettier": "2.0.5",
-        "protractor": "~5.4.3",
-        "semantic-release": "^17.1.1",
-        "travis-deploy-once": "^5.0.11",
-        "ts-node": "~8.3.0",
-        "tslint": "~5.18.0",
-        "typescript": "~3.7.5"
+  "name": "quran-team",
+  "version": "0.1.0",
+  "author": "Tarek Eldeeb",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --base-href / --prod",
+    "clean": "rm -rf ./dist & rm -rf node_modules & npm cache clean --force",
+    "test": "ng test",
+    "lint": "ng lint",
+    "prettier-format": "prettier --config .prettierrc '**/*.{ts,js,html,css,json}' --write",
+    "e2e": "ng e2e",
+    "deploy": "gh-pages -d dist"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AhmedAlatawi/ngx-treant-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Quran-Labs/quran.team/issues"
+  },
+  "homepage": "https://quran.team",
+  "keywords": [
+    "quran",
+    "sanad",
+    "database",
+    "islam",
+    "ejaza",
+    "jquery",
+    "visualization",
+    "tree",
+    "diagrams",
+    "draws",
+    "charts",
+    "svg"
+  ],
+  "dependencies": {
+    "@ahmed757/ngx-treant-js": "^1.0.4",
+    "@angular/animations": "~10.2.5",
+    "@angular/common": "~10.2.5",
+    "@angular/compiler": "~10.2.5",
+    "@angular/core": "~10.2.5",
+    "@angular/forms": "^10.2.5",
+    "@angular/localize": "~10.2.5",
+    "@angular/platform-browser": "~10.2.5",
+    "@angular/platform-browser-dynamic": "~10.2.5",
+    "@angular/router": "~10.2.5",
+    "bootstrap": "4.5.0",
+    "jquery": "3.5.1",
+    "jquery-easing": "0.0.1",
+    "ngx-bootstrap": "^5.6.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.16.1",
+    "rxjs": "~6.5.4",
+    "treant-js": "file:lib/treant-js",
+    "tslib": "^2.6.2",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1002.4",
+    "@angular-devkit/build-ng-packagr": "~0.1002.4",
+    "@angular/cli": "~10.2.4",
+    "@angular/compiler-cli": "~10.2.5",
+    "@angular/language-service": "~10.2.5",
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/jquery": "^3.3.38",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^5.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "gh-pages": "^6.0.0",
+    "husky": "^4.2.5",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~5.0.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~2.1.0",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "lint-staged": "^10.2.11",
+    "ng-packagr": "^10.1.2",
+    "prettier": "2.0.5",
+    "protractor": "~5.4.3",
+    "semantic-release": "^17.1.1",
+    "travis-deploy-once": "^5.0.11",
+    "ts-node": "~8.3.0",
+    "tslint": "~5.18.0",
+    "typescript": "~4.0.8"
+  }
 }
