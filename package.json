@@ -6,25 +6,12 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build --base-href / --prod",
-        "build-lib": "ng build @ahmed757/ngx-treant-js --prod && npm run copy",
-        "build-lib-watch": "ng build @ahmed757/ngx-treant-js --watch",
         "clean": "rm -rf ./dist & rm -rf node_modules & npm cache clean --force",
         "test": "ng test",
-        "test-lib": "ng test @ahmed757/ngx-treant-js --code-coverage",
-        "test-lib-ci": "npm run test-lib -- --browsers ChromeHeadlessCI --watch false",
         "lint": "ng lint",
-        "lint-lib": "ng lint @ahmed757/ngx-treant-js",
         "prettier-format": "prettier --config .prettierrc '**/*.{ts,js,html,css,json}' --write",
         "e2e": "ng e2e",
-        "copy": "cp -r images dist/ahmed757/ngx-treant-js && cp README.md dist/ahmed757/ngx-treant-js",
-        "prepublishOnly": "npm run -s build",
-        "commit": "git-cz",
-        "deploy": "gh-pages -d dist",
-        "travis-deploy-once": "travis-deploy-once --pro",
-        "semantic-release": "semantic-release && npm run build"
-    },
-    "release": {
-        "pkgRoot": "dist/ahmed757/ngx-treant-js"
+        "deploy": "gh-pages -d dist"
     },
     "config": {
         "commitizen": {
@@ -36,31 +23,21 @@
             "@commitlint/config-conventional"
         ]
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run prettier-format",
-            "commit-msg": "commitlint --edit"
-        }
-    },
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://registry.npmjs.org/"
-    },
     "private": false,
     "repository": {
         "type": "git",
         "url": "https://github.com/AhmedAlatawi/ngx-treant-js.git"
     },
     "bugs": {
-        "url": "https://github.com/AhmedAlatawi/ngx-treant-js/issues"
+        "url": "https://github.com/Quran-Labs/quran.team/issues"
     },
-    "homepage": "https://github.com/AhmedAlatawi/ngx-treant-js",
+    "homepage": "https://quran.team",
     "keywords": [
-        "angular",
-        "javascript",
-        "typescript",
-        "bootstrap",
-        "treant-js",
+        "quran",
+        "sanad",
+        "database",
+        "islam",
+        "ejaza",
         "jquery",
         "visualization",
         "tree",
