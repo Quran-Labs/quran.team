@@ -53,7 +53,6 @@
                             "optimization": true,
                             "outputHashing": "all",
                             "sourceMap": false,
-                            "extractCss": true,
                             "namedChunks": false,
                             "extractLicenses": true,
                             "vendorChunk": false,
@@ -117,17 +116,6 @@
                         ]
                     }
                 },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "tsconfig.app.json",
-                            "tsconfig.spec.json",
-                            "e2e/tsconfig.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                },
                 "e2e": {
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
@@ -166,16 +154,6 @@
                         "main": "lib/ngx-treant-js/src/test.ts",
                         "tsConfig": "lib/ngx-treant-js/tsconfig.spec.json",
                         "karmaConfig": "lib/ngx-treant-js/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "lib/ngx-treant-js/tsconfig.lib.json",
-                            "lib/ngx-treant-js/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
                     }
                 }
             }
