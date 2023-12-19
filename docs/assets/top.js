@@ -1,14 +1,3 @@
-var nonly = function (c) {
-    const allowed = ['text', 'name'];
-    const filtered = Object.keys(c)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-            obj[key] = c[key];
-            return obj;
-        }, {});
-    return filtered;
-};
-
 var allah = {
         id: 0,
         HTMLclass: 'wahi',
@@ -101,7 +90,7 @@ var allah = {
         id:10,
         parent: abdullah_bin_masood.id,
         HTMLclass: 'tabei',
-        uncles: [nonly(ali_bin_abitaleb)],
+        uncles: [ali_bin_abitaleb.id],
         text: {
             name: 'زر بن حبيش',
         },
@@ -125,7 +114,7 @@ var allah = {
     abdullah_bin_abbas = {
         id: 13,
         parent: obay_bin_kaab.id,
-        uncles: [nonly(zaid_bin_thabet)],
+        uncles: [zaid_bin_thabet.id],
         HTMLclass: 'sahabi',
         text: {
             name: 'عبد الله بن عباس',
@@ -151,10 +140,10 @@ var allah = {
         id:16,
         parent: ali_bin_abitaleb.id,
         uncles: [
-            nonly(obay_bin_kaab),
-            nonly(abdullah_bin_masood),
-            nonly(othman_bin_affan),
-            nonly(zaid_bin_thabet),
+            obay_bin_kaab.id,
+            abdullah_bin_masood.id,
+            othman_bin_affan.id,
+            zaid_bin_thabet.id,
         ],
         childrenDropLevel: 0,
         HTMLclass: 'tabei',
@@ -200,7 +189,7 @@ var allah = {
         parent: abo_horaira.id,
         HTMLclass: 'tabei',
         childrenDropLevel: 1,
-        uncles: [nonly(abdullah_bin_abbas), nonly(abdullah_bin_abi_ayyash)],
+        uncles: [abdullah_bin_abbas.id, abdullah_bin_abi_ayyash.id],
         text: {
             name: 'الأعرج',
         },
@@ -215,7 +204,7 @@ var allah = {
         id: 23,
         parent: abo_gaafar_almadani_pseudo.id,
         HTMLclass: 'qari10',
-        uncles: [nonly(abdullah_bin_abi_ayyash), nonly(abo_horaira)],
+        uncles: [abdullah_bin_abi_ayyash.id, abo_horaira.id],
         childrenDropLevel: 2,
         text: {
             name: 'أبو جعفر المدني',
@@ -241,7 +230,7 @@ var allah = {
         id:26,
         parent: alaaraj.id,
         childrenDropLevel: 1,
-        uncles: [nonly(abo_gaafar_almadani)],
+        uncles: [abo_gaafar_almadani.id],
         HTMLclass: 'qari7',
         text: {
             name: 'نافع المدني',
@@ -421,7 +410,7 @@ var allah = {
         id: 47,
         parent: alaamash.id,
         HTMLclass: 'qari7',
-        uncles: [nonly(ibn_abi_laila)],
+        uncles: [ibn_abi_laila.id],
         text: {
             name: 'حمزة الكوفي',
         },
@@ -487,7 +476,7 @@ var allah = {
         HTMLclass: 'rawi',
 
         text: {
-            name: 'الدوري',
+            name: 'الـدوري',
         },
     },
     omran_bin_melhan = {
@@ -495,7 +484,7 @@ var allah = {
         parent: abo_mosa_alashaari.id,
         HTMLclass: 'tabei',
         childrenDropLevel: 1,
-        uncles: [nonly(abdullah_bin_abbas)],
+        uncles: [abdullah_bin_abbas.id],
         text: {
             name: 'عمران بن ملحان',
         },

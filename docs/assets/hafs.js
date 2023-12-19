@@ -1,14 +1,3 @@
-var nonly = function (c) {
-    const allowed = ['text', 'name'];
-    const filtered = Object.keys(c)
-        .filter((key) => allowed.includes(key))
-        .reduce((obj, key) => {
-            obj[key] = c[key];
-            return obj;
-        }, {});
-    return filtered;
-};
-
     var hafs = {
         id: 0,
         HTMLclass: 'rawi',
