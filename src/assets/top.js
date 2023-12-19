@@ -476,7 +476,7 @@ var allah = {
         HTMLclass: 'rawi',
 
         text: {
-            name: 'الدوري',
+            name: 'الـدوري',
         },
     },
     omran_bin_melhan = {

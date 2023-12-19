@@ -31,7 +31,6 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     displayChart = true;
     uploadable = false;
 
-    private tree_name;
     private svc: DemoAppService;
     private node;
     private tree;
@@ -133,14 +132,14 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
                 window.scrollTo(0, 0);
             }
         });
-        this.tree_name = this.route.snapshot.paramMap.get('id');
-        this.basicPopoverData = this.svc.getBasicPopoverData(this.tree_name);
+        let tree_name = this.route.snapshot.paramMap.get('id');
+        this.basicPopoverData = this.svc.getTreeDataFromLabel(tree_name);
         console.log("Starting with >\n"+ JSON.stringify(this.basicPopoverData));
     }
 
     onClick(obj): void {
         if(obj.node.nodeHTMLclass.trim() === "rawi"){
-            this.router.navigate(['/tree', "hafs"]);
+            this.router.navigate(['/إسناد', obj.node.text.name.replace(/ /g,"_")]);
         }
     }
 
@@ -149,7 +148,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     }
 
     onHover(event): void {
-        if( (this.route.snapshot.params['id'] !== "top") &&
+        if( (this.route.snapshot.params['id'] !== "القرآن") &&
          (event.node.nodeHTMLclass.trim().match(/^(?:rawi|)$/)) ){
             setTimeout(() => {
                 event.$('.popover-title').text(event.node.text.name);

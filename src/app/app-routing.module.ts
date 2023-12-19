@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { BasicPopoverComponent } from './demo-charts/basic-popover/basic-popover.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/tree/top', pathMatch: 'full' },
-    { path: 'tree', component: BasicPopoverComponent },
-    { path: 'tree/:id', component: BasicPopoverComponent },
+    { path: '', redirectTo: '/إسناد/القرآن', pathMatch: 'full' },
+    { path: 'إسناد', component: BasicPopoverComponent },
+    { path: 'إسناد/:id', component: BasicPopoverComponent },
 ];
 
 @NgModule({
