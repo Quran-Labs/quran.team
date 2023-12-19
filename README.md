@@ -1,14 +1,11 @@
-# Quran.team
+# مشروع أرشيف أسانيد وإجازات القرآن الكريم
 
-A graphical representation for teacher-student connection (Sanad) tree for the Quran.
+(((تحت الانشاء)))
 
-The tree renderring is based on [Treant.js](https://fperucic.github.io/treant-js) and the Sanad data is sources from [this book](https://shamela.ws/book/30067)
-and this good looking [iid-quran](http://www.iid-quran.com) site. Treant-JS has been modified to support multiple parents (uncles data list).
+## رابط المشروع
+هنا => https://quran.team
 
-## Screensots
-![Sanad-Quran-Tree](https://github.com/tarekeldeeb/sanad-quran/blob/main/pix/sanad-quran-image-preview.png?raw=true)
-
-## Live link
-The project is live at https://quran.team
-
-For developers: Preview the main branch [here](https://raw.githack.com/tarekeldeeb/sanad-quran/main/index.html)
+## شكرا
+ نشكر كل من يساهم في تطوير المشروع، ونخص بالذكر:
+   * مشروع أحمد [لاحتواء نظام أنجيولار](https://github.com/ahmedalatawi/ngx-treant-js).
+   * مشروع [العرض الشجري](https://github.com/tarekeldeeb/quran-tree).
