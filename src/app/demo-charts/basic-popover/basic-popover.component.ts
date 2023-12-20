@@ -27,7 +27,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     basicPopoverClass = 'basic-popover-chart';
 
     basicPopoverData;
-
+    tree_name;
     displayChart = true;
     uploadable = false;
 
@@ -132,8 +132,8 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
                 window.scrollTo(0, 0);
             }
         });
-        let tree_name = this.route.snapshot.paramMap.get('id');
-        this.basicPopoverData = this.svc.getTreeDataFromLabel(tree_name);
+        this.tree_name = this.route.snapshot.paramMap.get('id');
+        this.basicPopoverData = this.svc.getTreeDataFromLabel(this.tree_name);
         console.log("Starting with >\n"+ JSON.stringify(this.basicPopoverData));
     }
 
@@ -215,13 +215,13 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
             n.id = max_id;
             max_id = max_id + 1;
         });
-        // Search for parent ID, and cleanup parent
+        // Search for parent ID
         var affectedParents = this.basicPopoverData.filter(n => n.children && n.children.some(c => c.parentId === 0));
-        affectedParents.forEach(function(p){
-            p.children.forEach(function(c){
+        affectedParents.forEach((p) =>{
+            p.children.forEach((c) => {
                 if(c.parentId === 0){
-                    //this.basicPopoverData[c.id].parentId = p.id;
-                    //delete c.parentId;
+                    this.basicPopoverData[c.id].parentId = p.id;
+                    delete c.parentId;
                 }
             });
         });
@@ -231,6 +231,6 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
         // Cleanup _json_id keys
 
         //Do upload to a new PR
-        console.log("Uploading ..")
+        console.log("Uploading .. \n DATA>\n"+JSON.stringify(this.basicPopoverData));
     }
 }
