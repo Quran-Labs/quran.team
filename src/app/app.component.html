@@ -1,11 +1,24 @@
-<div class="container-fluid p-0">
-    <nav class="navbar navbar-dark bg-primary">
+<nav class="navbar navbar-default navbar-dark bg-primary navbar-fixed-right ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <i type="button" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </i> 
         <a class="navbar-brand" routerLink="">
-        <img width="32" src="assets/pix/logo.svg">
-        مشروع أرشيف أسانيد وإجازات القرآن
-            <!-- <mat-icon class="mat-icon-rtl-mirror" svgIcon="thumb-up"></mat-icon> -->
+            <img width="32" src="assets/pix/logo.svg">
+            مشروع أرشيف أسانيد وإجازات القرآن
         </a>
-    </nav>
-</div>
-
+      </div>
+      <div class="collapse navbar-collapse" [collapse]="isCollapsed">
+        <ul class="nav navbar-nav">
+          <li><a href="https://github.com/Quran-Labs/quran.team"><i class="bi bi-person-fill-gear"></i> شارك كمبرمج ويب</a></li>
+          <li><a href="https://github.com/Quran-Labs/quran.team"><i class="bi bi-person-fill-check"></i> شارك كمشرف مشروع</a></li>
+          <li></li>
+        </ul>
+        <br />
+        <div class="sharethis-inline-share-buttons"></div>
+      </div>
+    </div>
+  </nav>
 <router-outlet></router-outlet>
