@@ -39,7 +39,7 @@ label {
 .instructions {
     display: block;
     text-align: right;
-    width: 326px;
+    width: 280px;
     background-color: cornsilk;
     padding: 25px;
     margin: 25px;
@@ -60,6 +60,11 @@ label {
 }
 .instructions td > div {
     border-radius: 5px;
+}
+.instructions svg {
+    padding-bottom: 20px;
+    width: 70px;
+    transform: rotate(-30deg);
 }
 fieldset,
 img {
@@ -105,13 +110,7 @@ body {
 /* optional Container STYLES */
 .basic-popover-chart {
     margin: 5px;
-    width: 1650px;
-}
-
-/* optional Container STYLES */
-.chart {
-    margin: 5px;
-    width: 1860px;
+    width: 1362px;
 }
 .Treant > .node {
     padding: 3px;

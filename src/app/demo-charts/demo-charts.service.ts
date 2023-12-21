@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
-import * as top from '../../assets/top.js';
-import * as qaloon from '../../assets/qaloon.js';
-import * as warsh from '../../assets/warsh.js';
-import * as ibn_wardan from '../../assets/ibn_wardan.js';
-import * as ibn_jumaz from '../../assets/ibn_jumaz.js';
-import * as qonbol from '../../assets/qonbol.js';
-import * as bazzy from '../../assets/bazzy.js';
-import * as doory_amr from '../../assets/doory_amr.js';
-import * as soosy from '../../assets/soosy.js';
-import * as rawh from '../../assets/rawh.js';
-import * as rowais from '../../assets/rowais.js';
-import * as hafs from '../../assets/hafs.js';
-import * as shoba from '../../assets/shoba.js';
-import * as hisham from '../../assets/hisham.js';
-import * as ibn_thakwan from '../../assets/ibn_thakwan.js';
-import * as khalaf from '../../assets/khalaf.js';
-import * as khallad from '../../assets/khallad.js';
-import * as ishaq from '../../assets/ishaq.js';
-import * as edrees from '../../assets/edrees.js';
-import * as abo_elharith from '../../assets/abo_elharith.js';
-import * as doory_kasaiy from '../../assets/doory_kasaiy.js';
+import top from '../../assets/top.json';
+import qaloon from '../../assets/qaloon.json';
+import warsh from '../../assets/warsh.json';
+import ibn_wardan from '../../assets/ibn_wardan.json';
+import ibn_jumaz from '../../assets/ibn_jumaz.json';
+import qonbol from '../../assets/qonbol.json';
+import bazzy from '../../assets/bazzy.json';
+import doory_amr from '../../assets/doory_amr.json';
+import soosy from '../../assets/soosy.json';
+import rawh from '../../assets/rawh.json';
+import rowais from '../../assets/rowais.json';
+import hafs from '../../assets/hafs.json';
+import shoba from '../../assets/shoba.json';
+import hisham from '../../assets/hisham.json';
+import ibn_thakwan from '../../assets/ibn_thakwan.json';
+import khalaf from '../../assets/khalaf.json';
+import khallad from '../../assets/khallad.json';
+import ishaq from '../../assets/ishaq.json';
+import edrees from '../../assets/edrees.json';
+import abo_elharith from '../../assets/abo_elharith.json';
+import doory_kasaiy from '../../assets/doory_kasaiy.json';
 
 @Injectable({
     providedIn: 'root',
@@ -47,47 +47,47 @@ export class DemoAppService {
     getTreeDataFromLabel(label=""): any {
         switch (label) {
             case 'قالون':
-                return this.config.concat(qaloon.default);
+                return this.config.concat(qaloon);
             case 'ورش':
-                return this.config.concat(warsh.default);
+                return this.config.concat(warsh);
             case 'ابن_وردان':
-                return this.config.concat(ibn_wardan.default);
+                return this.config.concat(ibn_wardan);
             case 'ابن_جماز':
-                return this.config.concat(ibn_jumaz.default);
+                return this.config.concat(ibn_jumaz);
             case 'قنبل':
-                return this.config.concat(qonbol.default);
+                return this.config.concat(qonbol);
             case 'البزي':
-                return this.config.concat(bazzy.default);
+                return this.config.concat(bazzy);
             case 'الدوري':
-                return this.config.concat(doory_amr.default);
+                return this.config.concat(doory_amr);
             case 'السوسي':
-                return this.config.concat(soosy.default);
+                return this.config.concat(soosy);
             case 'روح':
-                return this.config.concat(rawh.default);                                    
+                return this.config.concat(rawh);                                    
             case 'رويس':
-                return this.config.concat(rowais.default);
+                return this.config.concat(rowais);
             case 'حفص':
-                return this.config.concat(hafs.default);
+                return this.config.concat(hafs);
             case 'شعبة':
-                return this.config.concat(shoba.default);
+                return this.config.concat(shoba);
             case 'هشام':
-                return this.config.concat(hisham.default);
+                return this.config.concat(hisham);
             case 'ابن_ذكوان':
-                return this.config.concat(ibn_thakwan.default);
+                return this.config.concat(ibn_thakwan);
             case 'خلف':
-                return this.config.concat(khalaf.default);
+                return this.config.concat(khalaf);
             case 'خلاد':
-                return this.config.concat(khallad.default);
+                return this.config.concat(khallad);
             case 'إسحاق':
-                return this.config.concat(ishaq.default);
+                return this.config.concat(ishaq);
             case 'إدريس':
-                return this.config.concat(edrees.default);  
+                return this.config.concat(edrees);  
             case 'أبو_الحارث':
-                return this.config.concat(abo_elharith.default);
+                return this.config.concat(abo_elharith);
             case 'الـدوري':
-                return this.config.concat(doory_kasaiy.default); //
+                return this.config.concat(doory_kasaiy); //
             default:
-                return this.config.concat(top.default);
+                return this.config.concat(top);
         }
     }
 }

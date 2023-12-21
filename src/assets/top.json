@@ -1,0 +1,541 @@
+[
+    {
+        "id": 0,
+        "HTMLclass": "wahi",
+        "text": {
+            "name": "رب العزة"
+        },
+        "image": "assets/pix/1.png"
+    },
+    {
+        "id": 1,
+        "parent": 0,
+        "HTMLclass": "wahi",
+        "text": {
+            "name": "جبريل"
+        },
+        "image": "assets/pix/2.png"
+    },
+    {
+        "id": 2,
+        "parent": 1,
+        "HTMLclass": "wahi",
+        "text": {
+            "name": "رسول الله"
+        },
+        "image": "assets/pix/3.png"
+    },
+    {
+        "id": 9,
+        "parent": 2,
+        "HTMLclass": "sahabi",
+        "childrenDropLevel": 1,
+        "text": {
+            "name": "أبو موسى الأشعري"
+        }
+    },
+    {
+        "id": 8,
+        "parent": 2,
+        "HTMLclass": "sahabi",
+        "text": {
+            "name": "أبي بن كعب"
+        }
+    },
+    {
+        "id": 3,
+        "parent": 2,
+        "HTMLclass": "sahabi",
+        "childrenDropLevel": 1,
+        "text": {
+            "name": "زيد بن ثابت"
+        }
+    },
+    {
+        "id": 4,
+        "parent": 2,
+        "HTMLclass": "sahabi",
+        "childrenDropLevel": 1,
+        "text": {
+            "name": "علي بن أبي طالب"
+        }
+    },
+    {
+        "id": 6,
+        "parent": 2,
+        "HTMLclass": "sahabi",
+        "childrenDropLevel": 1,
+        "text": {
+            "name": "عبد الله بن مسعود"
+        }
+    },
+    {
+        "id": 5,
+        "parent": 2,
+        "HTMLclass": "sahabi",
+        "childrenDropLevel": 1,
+        "text": {
+            "name": "عثمان بن عفان"
+        }
+    },
+    {
+        "id": 12,
+        "parent": 8,
+        "HTMLclass": "sahabi",
+        "text": {
+            "name": "أبو هريرة"
+        }
+    },
+    {
+        "id": 7,
+        "parent": 2,
+        "HTMLclass": "sahabi",
+        "childrenDropLevel": 2,
+        "text": {
+            "name": "أبو الدرداء"
+        }
+    },
+    {
+        "id": 13,
+        "parent": 8,
+        "uncles": [
+            3
+        ],
+        "HTMLclass": "sahabi",
+        "text": {
+            "name": "عبد الله بن عباس"
+        }
+    },
+    {
+        "id": 15,
+        "parent": 8,
+        "HTMLclass": "sahabi",
+        "text": {
+            "name": "عبد الله بن أبي عياش"
+        }
+    },
+    {
+        "id": 10,
+        "parent": 6,
+        "HTMLclass": "tabei",
+        "uncles": [
+            4
+        ],
+        "text": {
+            "name": "زر بن حبيش"
+        }
+    },
+    {
+        "id": 16,
+        "parent": 4,
+        "uncles": [
+            8,
+            6,
+            5,
+            3
+        ],
+        "childrenDropLevel": 0,
+        "HTMLclass": "tabei",
+        "text": {
+            "name": "أبو عبد الرحمن السُلمي"
+        }
+    },
+    {
+        "id": 18,
+        "parent": 16,
+        "childrenDropLevel": 2,
+        "HTMLclass": "qari7",
+        "text": {
+            "name": "عاصم بن أبي النجود"
+        }
+    },
+    {
+        "id": 19,
+        "parent": 18,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "حفص"
+        }
+    },
+    {
+        "id": 20,
+        "parent": 18,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "شعبة"
+        }
+    },
+    {
+        "id": 21,
+        "parent": 12,
+        "HTMLclass": "tabei",
+        "childrenDropLevel": 1,
+        "uncles": [
+            13,
+            15
+        ],
+        "text": {
+            "name": "الأعرج"
+        }
+    },
+    {
+        "id": 22,
+        "parent": 13,
+        "childrenDropLevel": 0,
+        "pseudo": true
+    },
+    {
+        "id": 23,
+        "parent": 22,
+        "HTMLclass": "qari10",
+        "uncles": [
+            15,
+            12
+        ],
+        "childrenDropLevel": 2,
+        "text": {
+            "name": "أبو جعفر المدني"
+        }
+    },
+    {
+        "id": 24,
+        "parent": 23,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "ابن وردان"
+        }
+    },
+    {
+        "id": 25,
+        "parent": 23,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "ابن جماز"
+        }
+    },
+    {
+        "id": 26,
+        "parent": 21,
+        "childrenDropLevel": 1,
+        "uncles": [
+            23
+        ],
+        "HTMLclass": "qari7",
+        "text": {
+            "name": "نافع المدني"
+        }
+    },
+    {
+        "id": 27,
+        "parent": 26,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "قالون"
+        }
+    },
+    {
+        "id": 28,
+        "parent": 26,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "ورش"
+        }
+    },
+    {
+        "id": 14,
+        "parent": 13,
+        "HTMLclass": "tabei",
+        "text": {
+            "name": "درباس مولى بن عباس"
+        }
+    },
+    {
+        "id": 29,
+        "parent": 14,
+        "childrenDropLevel": 1,
+        "HTMLclass": "qari7",
+        "text": {
+            "name": "ابن كثير المكي"
+        }
+    },
+    {
+        "id": 30,
+        "parent": 29,
+        "HTMLclass": "addnochild",
+        "text": {
+            "name": "أحمد النبال"
+        }
+    },
+    {
+        "id": 31,
+        "parent": 30,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "قنبل"
+        }
+    },
+    {
+        "id": 32,
+        "parent": 29,
+        "HTMLclass": "addnochild",
+        "text": {
+            "name": "عكرمة بن سليمان"
+        }
+    },
+    {
+        "id": 33,
+        "parent": 32,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "البزي"
+        }
+    },
+    {
+        "id": 34,
+        "parent": 13,
+        "HTMLclass": "tabei",
+        "text": {
+            "name": "سعيد بن جبير"
+        }
+    },
+    {
+        "id": 35,
+        "parent": 34,
+        "HTMLclass": "qari7",
+        "childrenDropLevel": 1,
+        "text": {
+            "name": "أبي عمرو البصري"
+        }
+    },
+    {
+        "id": 36,
+        "parent": 35,
+        "HTMLclass": "addnochild",
+        "text": {
+            "name": "يحيى بن المبارك"
+        }
+    },
+    {
+        "id": 37,
+        "parent": 36,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "الدوري"
+        }
+    },
+    {
+        "id": 38,
+        "parent": 36,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "السوسي"
+        }
+    },
+    {
+        "id": 39,
+        "parent": 5,
+        "HTMLclass": "tabei",
+        "text": {
+            "name": "المغيرة بن أبي شهاب"
+        }
+    },
+    {
+        "id": 40,
+        "HTMLclass": "qari7",
+        "parent": 7,
+        "uncles": [
+            39
+        ],
+        "text": {
+            "name": "ابن عامر الشامي"
+        }
+    },
+    {
+        "id": 43,
+        "parent": 42,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "هشام"
+        }
+    },
+    {
+        "id": 44,
+        "parent": 42,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "ابن ذكوان"
+        }
+    },
+    {
+        "id": 45,
+        "parent": 4,
+        "HTMLclass": "tabei",
+        "text": {
+            "name": "ابن أبي ليلى"
+        }
+    },
+    {
+        "id": 46,
+        "parent": 6,
+        "HTMLclass": "tabei",
+        "text": {
+            "name": "الأعمش"
+        }
+    },
+    {
+        "id": 47,
+        "parent": 46,
+        "HTMLclass": "qari7",
+        "uncles": [
+            45
+        ],
+        "text": {
+            "name": "حمزة الكوفي"
+        }
+    },
+    {
+        "id": 48,
+        "parent": 47,
+        "childrenDropLevel": 0,
+        "HTMLclass": "addnochild",
+        "text": {
+            "name": "سليم بن عيسى"
+        }
+    },
+    {
+        "id": 49,
+        "parent": 48,
+        "pseudo": true
+    },
+    {
+        "id": 51,
+        "parent": 48,
+        "pseudo": true
+    },
+    {
+        "id": 50,
+        "parent": 49,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "خلف"
+        }
+    },
+    {
+        "id": 52,
+        "parent": 51,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "خلاد"
+        }
+    },
+    {
+        "id": 41,
+        "parent": 40,
+        "HTMLclass": "addnochild",
+        "text": {
+            "name": "يحيى بن الحارث الذماري"
+        }
+    },
+    {
+        "id": 42,
+        "parent": 41,
+        "HTMLclass": "addnochild",
+        "text": {
+            "name": "أيوب بن تميم"
+        }
+    },
+    {
+        "id": 55,
+        "parent": 47,
+        "HTMLclass": "qari7",
+        "childrenDropLevel": 1,
+        "text": {
+            "name": "الكسائي"
+        }
+    },
+    {
+        "id": 56,
+        "parent": 55,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "أبو الحارث"
+        }
+    },
+    {
+        "id": 57,
+        "parent": 55,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "الـدوري"
+        }
+    },
+    {
+        "id": 58,
+        "parent": 9,
+        "HTMLclass": "tabei",
+        "childrenDropLevel": 1,
+        "uncles": [
+            13
+        ],
+        "text": {
+            "name": "عمران بن ملحان"
+        }
+    },
+    {
+        "id": 59,
+        "parent": 58,
+        "HTMLclass": "addnochild",
+        "text": {
+            "name": "أبو الأشهب العطارد"
+        }
+    },
+    {
+        "id": 60,
+        "parent": 59,
+        "HTMLclass": "qari10",
+        "childrenDropLevel": 0,
+        "text": {
+            "name": "يعقوب الحضرمي"
+        }
+    },
+    {
+        "id": 61,
+        "parent": 60,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "روح"
+        }
+    },
+    {
+        "id": 62,
+        "parent": 60,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "رويس"
+        }
+    },
+    {
+        "id": 63,
+        "parent": 48,
+        "HTMLclass": "qari10",
+        "text": {
+            "name": "خلف بن هشام"
+        }
+    },
+    {
+        "id": 64,
+        "parent": 63,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "إسحاق"
+        }
+    },
+    {
+        "id": 65,
+        "parent": 63,
+        "HTMLclass": "rawi",
+        "text": {
+            "name": "إدريس"
+        }
+    }
+]

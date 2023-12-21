@@ -9,13 +9,11 @@ import { BasicPopoverComponent } from './demo-charts/basic-popover/basic-popover
 import { NgxTreantJsModule } from '@ahmed757/ngx-treant-js';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-//import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
     declarations: [AppComponent, BasicPopoverComponent],
     imports: [
         BrowserModule,
-        //      MatIconModule,
         AppRoutingModule,
         NgxTreantJsModule,
         ReactiveFormsModule,

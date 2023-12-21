@@ -134,7 +134,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
         });
         this.tree_name = this.route.snapshot.paramMap.get('id');
         this.basicPopoverData = this.svc.getTreeDataFromLabel(this.tree_name);
-        console.log("Starting with >\n"+ JSON.stringify(this.basicPopoverData));
+        console.log("Starting with >\n"+ JSON.stringify(this.basicPopoverData.filter((_,i) => i>0)));
     }
 
     onClick(obj): void {
@@ -208,6 +208,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     }
 
     upload(): void {
+        // TODO: Need to redo with this.nodes, not basicPopover data ..
         var newNodes = this.basicPopoverData.filter(n => n.id == 0 && n.parentId == 0).sort((a,b) => a.parentId < b.parentId);
         // Assign new IDs
         var max_id = Math.max(...this.basicPopoverData.map(o => o.id || 0)) + 1;
