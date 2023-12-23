@@ -90,4 +90,33 @@ export class DemoAppService {
                 return this.config.concat(top);
         }
     }
+
+    stripBeforeUpload(nodes=[]):[any] {
+        const allowed = ['text', 'name', 'data_id', 'parentId', 'nodeHTMLclass', 'pseudo', 'image', 'uncles', 'childrenDropLevel'];
+        const dict = {
+            "data_id": "id",
+            "parentId": "parent",
+            "nodeHTMLclass": "HTMLclass"
+          };
+        return nodes.reduce((arr, current) => {
+            const filtered = Object.keys(current)
+                .filter((key) => allowed.includes(key))
+                .reduce((obj, key) => {
+                    if(current[key] && current[key] !== "" && current[key].length !== 0){
+                        let newkey = (key in dict)? dict[key]: key;
+                        obj[newkey] = current[key];
+                    }
+                    /* FIX IN SOURCE
+                    if(obj["parent"]<0){
+                        obj["id"] = 0;
+                        delete obj["parent"];
+                    }
+                    >> ID=1 ... set parent = 0;
+                    */
+                    return Object.fromEntries(Object.entries(obj).sort());
+                }, {});
+            arr.push(filtered)
+            return arr.sort((a,b) => a.id - b.id);
+        }, [])
+    }
 }
