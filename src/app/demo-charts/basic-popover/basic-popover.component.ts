@@ -238,7 +238,8 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
         const headers = new HttpHeaders()
                         .set("Content-Type", "application/json")
                         .set("cache-control","no-cache");
-        this.http.put('https://xrbhog4g8g.execute-api.eu-west-2.amazonaws.com/prod/prb0t', {
+        this.http.post('https://xrbhog4g8g.execute-api.eu-west-2.amazonaws.com/prod/prb0t', 
+            JSON.stringify({
                 'user': 'Quran-Labs', 
                 'repo': 'quran.team', 
                 'title': "إضافة من أحد الزوار، قيد المراجعة",
@@ -248,19 +249,19 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
                     {path: this.svc.getAssetFile(this.tree_name),
                      content: JSON.stringify(this.svc.stripBeforeUpload(this.nodes))}
                 ],
-            }, {headers})
-            .subscribe(
-                val => {
-                    console.log("PUT call successful value returned in body", 
-                                val);
-                },
-                response => {
-                    console.log("PUT call in error", response);
-                },
-                () => {
-                    console.log("The PUT observable is now completed.");
-                }
-            );        
+            }),
+            {headers}
+        ).subscribe(
+            val => {
+                console.log("PUT call successful value returned in body", val);
+            },
+            response => {
+                console.log("PUT call in error", response);
+            },
+            () => {
+                console.log("The PUT observable is now completed.");
+            }
+        );        
 
         console.log("Uploading .. \n DATA>\n"+JSON.stringify(this.svc.stripBeforeUpload(this.nodes)));
     }
