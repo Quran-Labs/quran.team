@@ -102,17 +102,13 @@ export class DemoAppService {
             const filtered = Object.keys(current)
                 .filter((key) => allowed.includes(key))
                 .reduce((obj, key) => {
-                    if(current[key] && current[key] !== "" && current[key].length !== 0){
+                    if(current[key] != null && current[key] !== "" && current[key].length !== 0){
                         let newkey = (key in dict)? dict[key]: key;
                         obj[newkey] = current[key];
                     }
-                    /* FIX IN SOURCE
                     if(obj["parent"]<0){
-                        obj["id"] = 0;
                         delete obj["parent"];
                     }
-                    >> ID=1 ... set parent = 0;
-                    */
                     return Object.fromEntries(Object.entries(obj).sort());
                 }, {});
             arr.push(filtered)

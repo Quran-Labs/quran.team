@@ -95,8 +95,8 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
             text: {
                 name: this.registerForm.value.name || '',
             },
-            id: 0,
-            parentId: 0,
+            id: (window as any).tree.getNodeDb().db.length ,
+            parentId: this.node.id,
         };
         nodeChildren.push(newStudent);
         const dataNode = this.findNodeByTextName(this.node.text.name);
@@ -209,7 +209,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
 
     upload(): void {
         // TODO: Need to redo with this.nodes, not basicPopover data ..
-        var newNodes = this.basicPopoverData.filter(n => n.id == 0 && n.parentId == 0).sort((a,b) => a.parentId < b.parentId);
+        /*var newNodes = this.basicPopoverData.filter(n => n.id == 0 && n.parentId == 0).sort((a,b) => a.parentId < b.parentId);
         // Assign new IDs
         var max_id = Math.max(...this.basicPopoverData.map(o => o.id || 0)) + 1;
         newNodes.forEach(function(n){
@@ -230,8 +230,8 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
         //Replace Child objects with IDs
 
         // Cleanup _json_id keys
-
+        */
         //Do upload to a new PR
-        console.log("Uploading .. \n DATA>\n"+JSON.stringify(this.basicPopoverData));
+        console.log("Uploading .. \n DATA>\n"+JSON.stringify(this.svc.stripBeforeUpload(this.nodes)));
     }
 }
