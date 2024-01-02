@@ -10,6 +10,8 @@ import { ActivatedRoute, Router, NavigationEnd  } from '@angular/router'
 import { DemoAppService } from '../demo-charts.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
+import {HttpClient} from "@angular/common/http";
+import {HttpHeaders} from "@angular/common/http";
 
 @Component({
     selector: 'ngx-treant-demo-basic-popover',
@@ -59,7 +61,8 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private modalService: BsModalService,
-        private formBuilder: UntypedFormBuilder
+        private formBuilder: UntypedFormBuilder,
+        private http: HttpClient,
     ) {
         this.svc = new DemoAppService();
     }
@@ -231,7 +234,34 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
 
         // Cleanup _json_id keys
         */
-        //Do upload to a new PR
+        //Do upload to a new PR:: https://github.com/PRB0t/PRB0t
+        const headers = new HttpHeaders()
+                        .set("Content-Type", "application/json")
+                        .set("cache-control","no-cache");
+        this.http.put('https://xrbhog4g8g.execute-api.eu-west-2.amazonaws.com/prod/prb0t', {
+                'user': 'Quran-Labs', 
+                'repo': 'quran.team', 
+                'title': "إضافة من أحد الزوار، قيد المراجعة",
+                'description': new Date(),
+                'commit': "إضافة سند", 
+                'files': [
+                    {path: this.svc.getAssetFile(this.tree_name),
+                     content: JSON.stringify(this.svc.stripBeforeUpload(this.nodes))}
+                ],
+            }, {headers})
+            .subscribe(
+                val => {
+                    console.log("PUT call successful value returned in body", 
+                                val);
+                },
+                response => {
+                    console.log("PUT call in error", response);
+                },
+                () => {
+                    console.log("The PUT observable is now completed.");
+                }
+            );        
+
         console.log("Uploading .. \n DATA>\n"+JSON.stringify(this.svc.stripBeforeUpload(this.nodes)));
     }
 }

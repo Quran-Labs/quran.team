@@ -90,7 +90,53 @@ export class DemoAppService {
                 return this.config.concat(top);
         }
     }
-
+    getAssetFile(tree_name: any) {
+        const path = "src/assets/"
+        switch (tree_name) {
+            case 'قالون':
+                return path.concat("qaloon.json");
+            case 'ورش':
+                return path.concat("warsh.json");
+            case 'ابن_وردان':
+                return path.concat("ibn_wardan.json");
+            case 'ابن_جماز':
+                return path.concat("ibn_jumaz.json");
+            case 'قنبل':
+                return path.concat("qonbol.json");
+            case 'البزي':
+                return path.concat("bazzy.json");
+            case 'الدوري':
+                return path.concat("doory_amr.json");
+            case 'السوسي':
+                return path.concat("soosy.json");
+            case 'روح':
+                return path.concat("rawh.json");                                    
+            case 'رويس':
+                return path.concat("rowais.json");
+            case 'حفص':
+                return path.concat("hafs.json");
+            case 'شعبة':
+                return path.concat("shoba.json");
+            case 'هشام':
+                return path.concat("hisham.json");
+            case 'ابن_ذكوان':
+                return path.concat("ibn_thakwan.json");
+            case 'خلف':
+                return path.concat("khalaf.json");
+            case 'خلاد':
+                return path.concat("khallad.json");
+            case 'إسحاق':
+                return path.concat("ishaq.json");
+            case 'إدريس':
+                return path.concat("edrees.json");  
+            case 'أبو_الحارث':
+                return path.concat("abo_elharith.json");
+            case 'الـدوري':
+                return path.concat("doory_kasaiy.json"); //
+            default:
+                return path.concat("top.json");
+        }
+    }
     stripBeforeUpload(nodes=[]):[any] {
         const allowed = ['text', 'name', 'data_id', 'parentId', 'nodeHTMLclass', 'pseudo', 'image', 'uncles', 'childrenDropLevel'];
         const dict = {
