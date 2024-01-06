@@ -239,7 +239,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
                         .set("Content-Type", "application/json")
                         .set("Access-Control-Allow-Origin", "*")
                         .set("cache-control","no-cache");
-        this.http.post<any>('http://prb0t.quran.team', 
+        this.http.post<any>('https://prb0t.quran.team', 
             {
                 'user': 'Quran-Labs', 
                 'repo': 'quran.team', 
