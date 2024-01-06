@@ -237,11 +237,14 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
         //Do upload to a new PR:: https://github.com/PRB0t/PRB0t
         const headers = new HttpHeaders()
                         .set("Content-Type", "application/json")
+                        .set("Access-Control-Allow-Origin", "*")
                         .set("cache-control","no-cache");
-        this.http.post('https://xrbhog4g8g.execute-api.eu-west-2.amazonaws.com/prod/prb0t', 
-            JSON.stringify({
+        this.http.post<any>('http://prb0t.quran.team', 
+            {
                 'user': 'Quran-Labs', 
                 'repo': 'quran.team', 
+                'branch': "main",
+                "token": "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",
                 'title': "إضافة من أحد الزوار، قيد المراجعة",
                 'description': new Date(),
                 'commit': "إضافة سند", 
@@ -249,17 +252,14 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
                     {path: this.svc.getAssetFile(this.tree_name),
                      content: JSON.stringify(this.svc.stripBeforeUpload(this.nodes))}
                 ],
-            }),
-            {headers}
+            },
+            {headers: headers}
         ).subscribe(
             val => {
-                console.log("PUT call successful value returned in body", val);
+                console.log("POST call successful value returned in body", val);
             },
             response => {
-                console.log("PUT call in error", response);
-            },
-            () => {
-                console.log("The PUT observable is now completed.");
+                console.log("POST call in error", response);
             }
         );        
 
