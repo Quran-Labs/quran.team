@@ -223,8 +223,8 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
             owner: "Quran-Labs",
             repo: "quran.team",
             title: "إضافة من أحد الزوار، قيد المراجعة",
-            body: "تاريخ الطلب" + new Date(),
-            head: "pull-request-branch-name",
+            body: "تاريخ الطلب " + new Date(),
+            head: "user-auto-pr",
             base: "main" /* optional: defaults to default branch */,
             update: true /* optional: set to `true` to enable updating existing pull requests */,
             forceFork: false /* optional: force creating fork even when user has write rights */,
@@ -235,12 +235,8 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
               {
                 /* optional: if `files` is not passed, an empty commit is created instead */
                 files: { // Examples: https://github.com/gr2m/octokit-plugin-create-pull-request
-                    [this.svc.getAssetFile(this.tree_name)]: JSON.stringify(this.svc.stripBeforeUpload(this.nodes), function(k,v){
-                        if(v instanceof Array){
-                          return v;
-                        } return JSON.stringify(v);
-                      }, 1),
-
+                    [this.svc.getAssetFile(this.tree_name)]: 
+                        `[${this.svc.stripBeforeUpload(this.nodes).map(i => JSON.stringify(i)).join(',\n ')}]`,
                 },
                 commit: "إضافة سند",
                 /* optional: if not passed, will be the authenticated user and the current date
