@@ -19,9 +19,14 @@ jobs:
         npm install
         npm run build
 
-    - name: commit 🚀
+    - name: Commit Docs 🚀
+      uses: oleksiyrudenko/gha-git-credentials@v2-latest
+      with:
+        token: '${{ secrets.GITHUB_TOKEN }}'
       run: |
         echo "quran.team" > docs/CNAME
+        git config user.email "tarekeldeeb@msn.com"
+        git config user.name "Tarek Eldeeb [Bot]"
         git add -u
         git commit -m "Auto Docs-Build" || echo "Nothing to commit!"
         git push origin main
