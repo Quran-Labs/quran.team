@@ -30,4 +30,9 @@ jobs:
         git config user.name "Tarek Eldeeb [Bot]"
         git add -u
         git commit -m "Auto Docs-Build" || echo "Nothing to commit!"
-        git push origin main
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
