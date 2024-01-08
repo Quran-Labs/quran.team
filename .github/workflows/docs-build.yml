@@ -8,20 +8,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
     - uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js
       uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
 
     - name: Build
       run: |
         npm install
         npm run build
-        #Git add, commit, and push
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: docs
