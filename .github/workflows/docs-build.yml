@@ -19,7 +19,9 @@ jobs:
         npm install
         npm run build
 
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        folder: docs
+    - name: commit 🚀
+      run: |
+        echo "quran.team" > docs/CNAME
+        git add -u
+        git commit -m "Auto Docs-Build" || echo "Nothing to commit!"
+        git push origin main

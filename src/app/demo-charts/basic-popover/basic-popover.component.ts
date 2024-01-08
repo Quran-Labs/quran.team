@@ -83,7 +83,6 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     }
 
     onSubmit() {
-        //(window as any).tree.addNode({'id':this.node.id}, {'text':{'name':"TESTT"}});
         const node = this.nodes.find((n) => n.id == this.node.id);
         const hasChildren = !!node.children && !!node.children.length;
         let nodeChildren = hasChildren ? node.children.map(c => {
@@ -146,6 +145,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     }
 
     onUpdate(obj): void {
+        this.uploadable = true;
         console.log('onUpdate: ', obj);
     }
 
@@ -185,27 +185,6 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
 
     onLoadNodes(obj): void {
         this.nodes = obj.nodes;
-        const $ = obj.$;
-
-        setTimeout(() => {
-            /*this.flatNodes = this.basicPopoverData;
-            //this.flatNodes = this.svc.flattenItems(
-                //    [this.basicPopoverData.nodeStructure],
-                //    'children'
-            //);
-            this.flatNodes.forEach((n, i) => {
-                this.flatNodes[i].id = i;
-                const node = this.nodes.find((n) => n.id == i);
-                this.flatNodes[i].parentId = node.parentId;
-            });
-
-            const unflattenNodes = this.flatNodes[0];
-            unflattenNodes.children = this.svc.unflatten(this.flatNodes);
-
-            this.basicPopoverData.nodeStructure = unflattenNodes;
-            */
-        });
-
         console.log('nodes: ', this.nodes);
     }
 
@@ -252,5 +231,6 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
             ],
           })
           .then((pr) => console.log(pr.data.number));
+          this.uploadable = false;  
     }
 }
