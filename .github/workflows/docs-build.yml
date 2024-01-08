@@ -19,10 +19,11 @@ jobs:
         npm install
         npm run build
 
-    - name: Commit Docs 🚀
-      uses: oleksiyrudenko/gha-git-credentials@v2-latest
+    - uses: oleksiyrudenko/gha-git-credentials@v2-latest
       with:
         token: '${{ secrets.GITHUB_TOKEN }}'
+
+    - name: Commit Docs 🚀
       run: |
         echo "quran.team" > docs/CNAME
         git config user.email "tarekeldeeb@msn.com"
