@@ -10,8 +10,8 @@ import { ActivatedRoute, Router, NavigationEnd  } from '@angular/router'
 import { DemoAppService } from '../demo-charts.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
-import {HttpClient} from "@angular/common/http";
-import {HttpHeaders} from "@angular/common/http";
+import { Octokit } from "@octokit/core";
+import { createPullRequest, DELETE_FILE } from "octokit-plugin-create-pull-request";
 
 @Component({
     selector: 'ngx-treant-demo-basic-popover',
@@ -62,7 +62,6 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
         private router: Router,
         private modalService: BsModalService,
         private formBuilder: UntypedFormBuilder,
-        private http: HttpClient,
     ) {
         this.svc = new DemoAppService();
     }
@@ -211,58 +210,51 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     }
 
     upload(): void {
-        // TODO: Need to redo with this.nodes, not basicPopover data ..
-        /*var newNodes = this.basicPopoverData.filter(n => n.id == 0 && n.parentId == 0).sort((a,b) => a.parentId < b.parentId);
-        // Assign new IDs
-        var max_id = Math.max(...this.basicPopoverData.map(o => o.id || 0)) + 1;
-        newNodes.forEach(function(n){
-            n.id = max_id;
-            max_id = max_id + 1;
+        const MyOctokit = Octokit.plugin(createPullRequest);
+        const TOKEN = "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"; // create token at https://github.com/settings/tokens/new?scopes=repo
+        const octokit = new MyOctokit({
+          auth: TOKEN,
         });
-        // Search for parent ID
-        var affectedParents = this.basicPopoverData.filter(n => n.children && n.children.some(c => c.parentId === 0));
-        affectedParents.forEach((p) =>{
-            p.children.forEach((c) => {
-                if(c.parentId === 0){
-                    this.basicPopoverData[c.id].parentId = p.id;
-                    delete c.parentId;
-                }
-            });
-        });
+        
+        // Returns a normal Octokit PR response
+        // See https://octokit.github.io/rest.js/#octokit-routes-pulls-create
+        octokit
+          .createPullRequest({
+            owner: "Quran-Labs",
+            repo: "quran.team",
+            title: "إضافة من أحد الزوار، قيد المراجعة",
+            body: "تاريخ الطلب" + new Date(),
+            head: "pull-request-branch-name",
+            base: "main" /* optional: defaults to default branch */,
+            update: true /* optional: set to `true` to enable updating existing pull requests */,
+            forceFork: false /* optional: force creating fork even when user has write rights */,
+            labels: [
+              this.tree_name,
+            ], /* optional: applies the given labels when user has permissions. When updating an existing pull request, already present labels will not be deleted. */
+            changes: [
+              {
+                /* optional: if `files` is not passed, an empty commit is created instead */
+                files: { // Examples: https://github.com/gr2m/octokit-plugin-create-pull-request
+                    [this.svc.getAssetFile(this.tree_name)]: JSON.stringify(this.svc.stripBeforeUpload(this.nodes), function(k,v){
+                        if(v instanceof Array){
+                          return v;
+                        } return JSON.stringify(v);
+                      }, 1),
 
-        //Replace Child objects with IDs
-
-        // Cleanup _json_id keys
-        */
-        //Do upload to a new PR:: https://github.com/PRB0t/PRB0t
-        const headers = new HttpHeaders()
-                        .set("Content-Type", "application/json")
-                        .set("Access-Control-Allow-Origin", "*")
-                        .set("cache-control","no-cache");
-        this.http.post<any>('https://prb0t.quran.team', 
-            {
-                'user': 'Quran-Labs', 
-                'repo': 'quran.team', 
-                'branch': "main",
-                "token": "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",
-                'title': "إضافة من أحد الزوار، قيد المراجعة",
-                'description': new Date(),
-                'commit': "إضافة سند", 
-                'files': [
-                    {path: this.svc.getAssetFile(this.tree_name),
-                     content: JSON.stringify(this.svc.stripBeforeUpload(this.nodes))}
-                ],
-            },
-            {headers: headers}
-        ).subscribe(
-            val => {
-                console.log("POST call successful value returned in body", val);
-            },
-            response => {
-                console.log("POST call in error", response);
-            }
-        );        
-
-        console.log("Uploading .. \n DATA>\n"+JSON.stringify(this.svc.stripBeforeUpload(this.nodes)));
+                },
+                commit: "إضافة سند",
+                /* optional: if not passed, will be the authenticated user and the current date
+                author: { name: "Author LastName", email: "Author.LastName@acme.com", date: new Date().toISOString(),
+                }, */
+                /* optional: if not passed, will use the information set in author */
+                committer: {
+                  name: "Auto",
+                  email: "no-reply@quran.team",
+                  date: new Date().toISOString(), // must be ISO date string
+                },
+              },
+            ],
+          })
+          .then((pr) => console.log(pr.data.number));
     }
 }

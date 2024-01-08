@@ -9,7 +9,6 @@ import { BasicPopoverComponent } from './demo-charts/basic-popover/basic-popover
 import { NgxTreantJsModule } from '@ahmed757/ngx-treant-js';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     declarations: [AppComponent, BasicPopoverComponent],
@@ -18,7 +17,6 @@ import {HttpClientModule} from '@angular/common/http';
         AppRoutingModule,
         NgxTreantJsModule,
         ReactiveFormsModule,
-        HttpClientModule,
         ModalModule.forRoot(),
     ],
     providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
