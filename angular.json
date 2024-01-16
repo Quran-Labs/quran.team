@@ -38,6 +38,10 @@
                         "vendorChunk": true,
                         "extractLicenses": false,
                         "buildOptimizer": false,
+                        "allowedCommonJsDependencies": [
+                            "before-after-hook",
+                            "once"
+                         ],
                         "sourceMap": true,
                         "optimization": false,
                         "namedChunks": true

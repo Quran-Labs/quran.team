@@ -5,13 +5,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { BasicPopoverComponent } from './demo-charts/basic-popover/basic-popover.component';
+import { BasicPopoverComponent } from './components/basic-popover/basic-popover.component';
 import { NgxTreantJsModule } from '@ahmed757/ngx-treant-js';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SideNavContentComponent } from './components/side-nav-content/side-nav-content.component';
+
+/*import { AppPageComponent } from './pages/app-page/app-page.component';
+import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
+import { ServicesPageComponent } from './pages/services-page/services-page.component';
+*/
 
 @NgModule({
-    declarations: [AppComponent, BasicPopoverComponent],
+    declarations: [
+        AppComponent, 
+        BasicPopoverComponent,
+        HeaderComponent,
+        SideNavContentComponent,    
+        SideNavComponent
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,

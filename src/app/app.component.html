@@ -1,11 +1,20 @@
 <div class="container-fluid p-0">
-    <nav class="navbar navbar-dark bg-primary">
-        <a class="navbar-brand" routerLink="">
-        <img width="32" src="assets/pix/logo.svg">
-        مشروع أرشيف أسانيد وإجازات القرآن
-            <!-- <mat-icon class="mat-icon-rtl-mirror" svgIcon="thumb-up"></mat-icon> -->
-        </a>
-    </nav>
+  <app-header> 
+  </app-header> 
 </div>
 
-<router-outlet></router-outlet>
+
+<app-side-nav 
+  [sidenavTemplateRef]="navContent"
+  [direction]="'right'" 
+  [navWidth]="280" 
+  [duration]="0.5"></app-side-nav>
+<div class="main-container">
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</div>
+
+<ng-template #navContent>
+  <app-side-nav-content></app-side-nav-content>
+</ng-template>

@@ -7,7 +7,7 @@ import {
     AfterViewInit,
 } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd  } from '@angular/router'
-import { DemoAppService } from '../demo-charts.service';
+import { DemoAppService } from '../../services/demo-charts.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { Octokit } from "@octokit/core";

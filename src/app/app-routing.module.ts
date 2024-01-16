@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BasicPopoverComponent } from './demo-charts/basic-popover/basic-popover.component';
+import { BasicPopoverComponent } from './components/basic-popover/basic-popover.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/إسناد/القرآن', pathMatch: 'full' },
