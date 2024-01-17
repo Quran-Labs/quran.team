@@ -3,8 +3,14 @@
 }
 .menu-icon {
     font-size: 2em;
-    padding: 18px;
+    padding: 8px;
+    margin: 10px;
     cursor: pointer;
+    background-color: transparent;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 10px;
+
 }
 .navbar-brand{
     transform: translateY(-25%);

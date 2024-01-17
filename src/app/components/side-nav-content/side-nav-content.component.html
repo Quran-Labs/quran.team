@@ -1,11 +1,12 @@
 <div class="side-nav-bar-content">
     <ul class="side-nav-bar-menu">
-        <li *ngFor="let navItem of navItems" (click)="onNavigationSelection(navItem)">{{ navItem.label }}</li>
-        <li>
-            <a href="https://github.com/Quran-Labs/quran.team" target="_blank">
-                <img src="assets/pix/icons8-github-48.png" width="24px">
-                مصدر المشروع
-            </a>
+        <li *ngFor="let navItem of navItems" (click)="onNavigationSelection(navItem)">
+            <img *ngIf="navItem.icon" src="{{ navItem.icon }}" width="24px">
+            {{ navItem.label }}
         </li>
     </ul>
+    <div id="side-version">
+        نسخة:
+        {{ getAppVersion() }}         
+    </div>
 </div>

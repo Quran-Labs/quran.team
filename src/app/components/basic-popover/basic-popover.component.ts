@@ -16,7 +16,7 @@ import { createPullRequest, DELETE_FILE } from "octokit-plugin-create-pull-reque
 @Component({
     selector: 'ngx-treant-demo-basic-popover',
     templateUrl: './basic-popover.component.html',
-    styleUrls: ['./basic-popover.component.css'],
+    styleUrls: ["../../app.component.css", './basic-popover.component.css'],
     encapsulation: ViewEncapsulation.None,
 })
 export class BasicPopoverComponent implements AfterViewInit, OnInit {
