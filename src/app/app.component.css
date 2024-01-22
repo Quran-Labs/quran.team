@@ -89,12 +89,10 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-
-    section {
-        flex: 1;
-    }
 }
-
+.main-container section {
+    flex: 1;
+}
 .bg-primary {
     background-color: #143d6d !important;
   }
