@@ -12,6 +12,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { Octokit } from "@octokit/core";
 import { createPullRequest, DELETE_FILE } from "octokit-plugin-create-pull-request";
+import * as process from 'process';
 
 @Component({
     selector: 'ngx-treant-demo-basic-popover',
@@ -42,7 +43,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     private content = `
            <div class="popover-content">
               <div class="btn-group mr-2" role="group">
-                  <a type="button" class="btn btn-primary btn-sm" title="Add child node" id="add" href="#">أضف تلميذ</a>
+                  <a type="button" class="btn btn-primary btn-sm" title="أضف اسم تلميذ في السند" id="add" href="#">أضف تلميذ</a>
               </div>
           </div>
       `;
@@ -68,10 +69,11 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
 
     ngAfterViewInit() {
         this.registerForm = this.formBuilder.group({
-            title: [''],
+            place: [''],
             name: [''],
             contact: [''],
             image: [''],
+            image_file: [''],
         });
     }
 
@@ -190,7 +192,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
 
     upload(): void {
         const MyOctokit = Octokit.plugin(createPullRequest);
-        const TOKEN = "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"; // create token at https://github.com/settings/tokens/new?scopes=repo
+        const TOKEN = process.env.TE_TOKEN; // create token at https://github.com/settings/tokens/new?scopes=repo
         const octokit = new MyOctokit({
           auth: TOKEN,
         });
@@ -233,4 +235,16 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
           .then((pr) => console.log(pr.data.number));
           this.uploadable = false;  
     }
+
+    onImagePicked(event: Event) {
+        const file = (event.target as HTMLInputElement).files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = (e: any) => {
+                this.registerForm.patchValue({ image_file: e.target.result });
+            }
+            reader.readAsDataURL(file);
+            this.registerForm.patchValue({ image: file.name + "   حجمها: " + (file.size/1024).toFixed(1) + " كيلوبايت"});
+        }
+      }
 }

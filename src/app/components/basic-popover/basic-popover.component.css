@@ -122,3 +122,23 @@ label {
     border: 1px solid black;
 
 }
+
+#image_uploader{
+    display: flex; /* 2. display flex to the rescue */
+    flex-direction: row;
+    width: 100%;
+
+    #image {
+        margin-left: 10px;
+    }
+    button{
+        width: 35%;
+    }
+}
+
+.modal-header{
+    background-color: #cfcfcf;
+    background-image: url("src/assets/pix/node-tree.svg");
+    background-repeat: no-repeat;
+    background-position: bottom left 25%;
+}

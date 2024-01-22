@@ -4,7 +4,7 @@
     <br />
         يمكنك إضافة إجازتك للقرآن لهذا المشروع!
  <br />
-ابدأ باختيار الرواية ثم اتبع الخطوات التالية ..
+ابدأ باختيار الراوي ثم اتبع الخطوات ..
     </div>
     <div *ngIf="tree_name !== 'القرآن'" class="instructions" style="right: 0;">
     لإضافة إجازتك للقران: <br />
@@ -90,36 +90,45 @@
                 />
             </div>
             <div class="form-group">
-                <label for="title">المسمى الوظيفي</label>
+                <label for="place">المدينة</label>
                 <input
                     type="text"
                     class="form-control"
-                    id="title"
-                    formControlName="title"
-                    placeholder="أدخل المسمى الوظيفي"
+                    id="place"
+                    formControlName="place"
+                    placeholder="أدخل المدينة أو البلد"
                 />
             </div>
             <div class="form-group">
-                <label for="contact">العنوان</label>
+                <label for="contact">العنوان الاكتروني</label>
                 <input
                     type="text"
                     class="form-control"
                     id="contact"
                     formControlName="contact"
-                    placeholder="أدخل العنوان الاكتروني (ايميل)"
+                    placeholder="أدخل عنوان صفحة شخصية أو ايميل"
                 />
             </div>
             <div class="form-group">
                 <label for="image">صورة الإجازة</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    id="image"
-                    formControlName="image"
-                    placeholder="أدخل رابط صورة الإجازة مثلا: http://gallary/imgs/malory.png"
-                />
+                <div id="image_uploader">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="image"
+                        formControlName="image"
+                        placeholder="اختر صورة واضحة حجمها أقل من 1 ميجا بايت"
+                    />
+                    <input
+                        type="file" #filePicker
+                        accept="image/png, image/jpeg"
+                        style="display:none"
+                        (change)="onImagePicked($event)"
+                    />
+                    <button type="button" class="btn btn-secondary" (click)=" filePicker.click() ">اختر ملف</button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary" [disabled]="!f.name.value">أضف</button>
+            <button type="submit" id="submit" class="btn btn-primary" [disabled]="!f.name.value">أضف</button>
         </form>
     </div>
 </ng-template>
