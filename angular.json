@@ -40,7 +40,8 @@
                         "buildOptimizer": false,
                         "allowedCommonJsDependencies": [
                             "before-after-hook",
-                            "once"
+                            "once",
+                            "process"
                          ],
                         "sourceMap": true,
                         "optimization": false,
