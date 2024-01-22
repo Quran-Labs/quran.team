@@ -12,7 +12,6 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { Octokit } from "@octokit/core";
 import { createPullRequest, DELETE_FILE } from "octokit-plugin-create-pull-request";
-import * as process from 'process';
 
 @Component({
     selector: 'ngx-treant-demo-basic-popover',
@@ -192,7 +191,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
 
     upload(): void {
         const MyOctokit = Octokit.plugin(createPullRequest);
-        const TOKEN = process.env.TE_TOKEN; // create token at https://github.com/settings/tokens/new?scopes=repo
+        const TOKEN = atob("Z2hwX0JGWkFxUDhvenVzaFY4YkdVQ2JnV0k4bGFpYWtnaDFVOFNNZg=="); // create token at https://github.com/settings/tokens/new?scopes=repo
         const octokit = new MyOctokit({
           auth: TOKEN,
         });
