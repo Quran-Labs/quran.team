@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href / --configuration production",
+    "build": "ng build --base-href / --configuration production && git checkout -- docs/CNAME",
     "clean": "rm -rf ./dist & rm -rf node_modules & npm cache clean --force",
     "test": "ng test",
     "lint": "ng lint",

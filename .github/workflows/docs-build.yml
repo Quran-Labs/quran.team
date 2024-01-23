@@ -26,7 +26,6 @@ jobs:
 
     - name: Commit Docs 🚀
       run: |
-        echo "quran.team" > docs/CNAME
         git config user.email "tarekeldeeb@msn.com"
         git config user.name "Tarek Eldeeb [Bot]"
         git add --all
