@@ -92,3 +92,46 @@ body {
     height: 100%;
     */
 }
+
+
+ol.abjd {
+    list-style: none;
+  }
+  
+  ol.abjd > li::before {
+    display: inline-block;
+    width: 1em;
+    margin-right: -1.5em;
+    margin-left: 0.5em;
+    text-align: left;
+    direction: ltr;
+  }
+  
+  ol.abjd > li:nth-child(1)::before  { content: ".أ"; }
+  ol.abjd > li:nth-child(2)::before  { content: ".ب"; }
+  ol.abjd > li:nth-child(3)::before  { content: ".جـ"; }
+  ol.abjd > li:nth-child(4)::before  { content: ".د"; }
+  ol.abjd > li:nth-child(5)::before  { content: ".هـ"; }
+  ol.abjd > li:nth-child(6)::before  { content: ".و"; }
+  ol.abjd > li:nth-child(7)::before  { content: ".ز"; }
+  ol.abjd > li:nth-child(8)::before  { content: ".حـ"; }
+  ol.abjd > li:nth-child(9)::before  { content: ".ط"; }
+  ol.abjd > li:nth-child(10)::before { content: ".ى"; }
+  ol.abjd > li:nth-child(11)::before { content: ".كـ"; }
+  ol.abjd > li:nth-child(12)::before { content: ".ل"; }
+  ol.abjd > li:nth-child(13)::before { content: ".مـ"; }
+  ol.abjd > li:nth-child(14)::before { content: ".ن"; }
+  ol.abjd > li:nth-child(15)::before { content: ".س"; }
+  ol.abjd > li:nth-child(16)::before { content: ".عـ"; }
+  ol.abjd > li:nth-child(17)::before { content: ".ف"; }
+  ol.abjd > li:nth-child(18)::before { content: ".صـ"; }
+  ol.abjd > li:nth-child(19)::before { content: ".ق"; }
+  ol.abjd > li:nth-child(20)::before { content: ".ر"; }
+  ol.abjd > li:nth-child(21)::before { content: ".ش"; }
+  ol.abjd > li:nth-child(22)::before { content: ".ت"; }
+  ol.abjd > li:nth-child(23)::before { content: ".ث"; }
+  ol.abjd > li:nth-child(24)::before { content: ".خـ"; }
+  ol.abjd > li:nth-child(25)::before { content: ".ذ"; }
+  ol.abjd > li:nth-child(26)::before { content: ".ضـ"; }
+  ol.abjd > li:nth-child(27)::before { content: ".ظ"; }
+  ol.abjd > li:nth-child(28)::before { content: ".غـ"; }
