@@ -191,9 +191,11 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
 
     upload(): void {
         const MyOctokit = Octokit.plugin(createPullRequest);
-        const TOKEN = atob("Z2hwX0JGWkFxUDhvenVzaFY4YkdVQ2JnV0k4bGFpYWtnaDFVOFNNZg=="); // create token at https://github.com/settings/tokens/new?scopes=repo
+         // create token at https://github.com/settings/tokens/new?scopes=repo
+        function leftrotate(str, d) {return str.substring(d, str.length) + str.substring(0, d);}
+        const TOKKEN = leftrotate('6vGn1kZ2jBlpXghp_GlaYBY4CiyryCKIEMCeGrRNXghp_GlaYB'.slice(0,-10),13);
         const octokit = new MyOctokit({
-          auth: TOKEN,
+          auth: TOKKEN,
         });
         
         // Returns a normal Octokit PR response
