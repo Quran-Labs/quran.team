@@ -15,3 +15,18 @@
 .navbar-brand{
     transform: translateY(-25%);
 }
+
+.share-btn{
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    color: cornsilk;
+}
+.share-btn > a {
+    padding: 5px;
+    font-size: 12px;
+    font-family: Verdana, Arial;
+}
+.share-btn > a:hover {
+    cursor: pointer;
+}
