@@ -22,7 +22,26 @@
     #side-version{
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: 70px;
         padding: 16px;
+        color: lightgray;
     }
+}
+
+
+.share-btn{
+    position: absolute;
+    bottom: 50px;
+    right: 32px;
+    background-color: lightgoldenrodyellow;
+    border-radius: 10px;
+    padding: 10px;
+}
+.share-btn > a {
+    padding: 10px;
+    font-size: 12px;
+    line-height: 3;
+}
+.share-btn > a:hover {
+    cursor: pointer;
 }

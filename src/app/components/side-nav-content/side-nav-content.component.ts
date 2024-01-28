@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import packageJson from '../../../../package.json';
 
@@ -17,9 +17,16 @@ export class SideNavContentComponent implements OnInit {
     
   ];
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,     
+    private elementRef:ElementRef ) {
+   }
 
   ngOnInit(): void {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.src = "//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js";
+    this.elementRef.nativeElement.appendChild(s);
   }
 
   getAppVersion(){

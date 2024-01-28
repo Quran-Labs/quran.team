@@ -9,16 +9,9 @@ import { NavigationService } from 'src/app/services/navigation.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(
-      private navService: NavigationService,
-      private elementRef:ElementRef
-      ) { }
+  constructor( private navService: NavigationService ) { }
 
   ngOnInit(): void {
-    var s = document.createElement("script");
-    s.type = "text/javascript";
-    s.src = "//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js";
-    this.elementRef.nativeElement.appendChild(s);
   }
 
   toggleSideNav() {
