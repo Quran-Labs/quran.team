@@ -32,7 +32,7 @@ export class DemoAppService {
         this.config = [{
             container: '#basic-popover',
             animateOnInit: true,
-    
+            scrollbar: "fancy",
             node: {
                 collapsable: true,
             },

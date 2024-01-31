@@ -122,6 +122,9 @@ label {
     border: 1px solid black;
 
 }
+.upload-button >span{
+    vertical-align:middle;
+} 
 
 #image_uploader{
     display: flex; /* 2. display flex to the rescue */
@@ -139,4 +142,9 @@ label {
     background-image: url("src/assets/pix/node-tree.svg");
     background-repeat: no-repeat;
     background-position: bottom left 25%;
+}
+
+#confirm_pr{
+    text-align: center;
+    padding-top: 16px;
 }

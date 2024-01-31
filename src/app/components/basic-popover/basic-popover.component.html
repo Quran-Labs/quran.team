@@ -62,7 +62,13 @@
     >
     </ngx-treant-chart>
 
-    <button type="button" class="upload-button" *ngIf="uploadable" aria-label="Upload" (click)="upload()">
+    <button type="button" class="upload-button" *ngIf="uploadable" aria-label="Upload" [disabled]="isUploading" (click)="upload()">
+        <ng-container *ngIf="isUploading; else elseNotUploading">
+            <span class="material-icons">sync</span>
+        </ng-container>
+        <ng-template #elseNotUploading>
+            <span class="material-icons">check</span>
+        </ng-template>
         <span>ارفع البيانات</span>
     </button>
     
@@ -129,5 +135,26 @@
             </div>
             <button type="submit" id="submit" class="btn btn-primary" [disabled]="!f.name.value">أضف</button>
         </form>
+    </div>
+</ng-template>
+
+
+
+<ng-template #confirm_pr>
+    <div class="modal-header">
+        <h2 class="modal-title pull-left">تم رفع طلبك بنجاح</h2>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        تم رفع طلب إضافتك على الرابط التالي، سوف نقوم بمراجعته ثم نشره إن شاء الله
+        <div id="confirm_pr">
+            <a href="{{ 'https://github.com/Quran-Labs/quran.team/pull/' + prNumber}}">طلب رقم {{prNumber}}</a>
+            <br />
+            (قم بحفظ الرابط، لن يظهر لك مجددا)
+            <br /> <br />
+            <button class="btn btn-primary" (click)="modalRef.hide()">تم</button>     
+        </div>
     </div>
 </ng-template>

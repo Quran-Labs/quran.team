@@ -22,6 +22,7 @@ import { createPullRequest, DELETE_FILE } from "octokit-plugin-create-pull-reque
 export class BasicPopoverComponent implements AfterViewInit, OnInit {
     modalRef: BsModalRef;
     @ViewChild('template') modalTemplate: TemplateRef<any>;
+    @ViewChild('confirm_pr') modalConfirmPR: TemplateRef<any>;
 
     registerForm: UntypedFormGroup;
 
@@ -32,6 +33,8 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     tree_name;
     displayChart = true;
     uploadable = false;
+    isUploading = false;
+    prNumber = 0;
 
     private svc: DemoAppService;
     private node;
@@ -190,6 +193,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     }
 
     upload(): void {
+        this.isUploading = true;
         const MyOctokit = Octokit.plugin(createPullRequest);
          // create token at https://github.com/settings/tokens/new?scopes=repo
         function leftrotate(str, d) {return str.substring(d, str.length) + str.substring(0, d);}
@@ -206,9 +210,9 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
             repo: "quran.team",
             title: "إضافة من أحد الزوار، قيد المراجعة",
             body: "تاريخ الطلب " + new Date(),
-            head: "user-auto-pr",
+            head: "user-auto-pr-" + new Date().valueOf(),
             base: "main" /* optional: defaults to default branch */,
-            update: true /* optional: set to `true` to enable updating existing pull requests */,
+            update: false /* optional: set to `true` to enable updating existing pull requests */,
             forceFork: false /* optional: force creating fork even when user has write rights */,
             labels: [
               this.tree_name,
@@ -233,8 +237,12 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
               },
             ],
           })
-          .then((pr) => console.log(pr.data.number));
-          this.uploadable = false;  
+          .then((pr) => {
+            this.prNumber = pr.data.number;
+            this.uploadable = false;
+            this.isUploading = false;
+            this.modalRef = this.modalService.show(this.modalConfirmPR);
+          });
     }
 
     onImagePicked(event: Event) {
