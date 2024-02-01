@@ -14,4 +14,12 @@
 }
 .navbar-brand{
     transform: translateY(-25%);
+    padding: 0 !important;
+}
+.navbar-brand h1{
+  text-shadow: none;
+  font-size: 90%;
+  color: white;
+  display: inline-block;
+  padding-bottom: 0;
 }
