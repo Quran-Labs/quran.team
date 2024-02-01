@@ -139,7 +139,7 @@ label {
 }
 .modal-header{
     background-color: #cfcfcf;
-    background-image: url("src/assets/pix/node-tree.svg");
+    background-image: url("/assets/pix/node-tree.svg");
     background-repeat: no-repeat;
     background-position: bottom left 25%;
 }
