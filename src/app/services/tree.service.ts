@@ -31,7 +31,6 @@ export class DemoAppService {
     constructor() {
         this.config = [{
             container: '#basic-popover',
-            animateOnInit: true,
             scrollbar: "None",
             node: {
                 collapsable: true,
