@@ -11,7 +11,9 @@
   [duration]="0.5"></app-side-nav>
 <div class="main-container">
   <section>
+    <ng-scrollbar #scrollable track="all" style="height: 100%">
     <router-outlet></router-outlet>
+    </ng-scrollbar>
   </section>
 </div>
 

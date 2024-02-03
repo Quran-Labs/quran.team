@@ -14,7 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SideNavContentComponent } from './components/side-nav-content/side-nav-content.component';
 import { OperationsPageComponent } from './pages/operations-page/operations-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
-
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 @NgModule({
     declarations: [
@@ -31,6 +31,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
         AppRoutingModule,
         NgxTreantJsModule,
         ReactiveFormsModule,
+        NgScrollbarModule,
         ModalModule.forRoot(),
     ],
     providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],

@@ -49,6 +49,7 @@
   "dependencies": {
     "@ahmed757/ngx-treant-js": "^1.0.4",
     "@angular/animations": "^15.2.10",
+    "@angular/cdk": "^15.2",
     "@angular/common": "^15.2.10",
     "@angular/compiler": "^15.2.10",
     "@angular/core": "^15.2.10",
@@ -62,6 +63,7 @@
     "jquery": "3.5.1",
     "jquery-easing": "0.0.1",
     "ngx-bootstrap": "10.2",
+    "ngx-scrollbar": "^10.0",
     "octokit-plugin-create-pull-request": "^5.1.1",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
