@@ -13,8 +13,8 @@ export class SideNavContentComponent implements OnInit {
   navItems = [
     { label: 'كيف يعمل الأرشيف', route: '/كيف-يعمل', icon: "assets/pix/question_exchange.png"},
     { label: 'اتصل بنا', route: '/اتصل-بنا', icon: "assets/pix/mail.png"},
-    { label: 'مصدر المشروع', url: 'https://github.com/Quran-Labs/quran.team', icon: "assets/pix/icons8-github-48.png"}
-    
+    { label: 'مصدر المشروع', url: 'https://github.com/Quran-Labs/quran.team', icon: "assets/pix/icons8-github-48.png"},
+    { label: 'تنزيل الأرشيف', url: 'https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FQuran-Labs%2Fquran.team%2Ftree%2Fmain%2Fdocs', icon: "assets/pix/download_archive.svg"}    
   ];
 
   constructor(
