@@ -124,7 +124,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     }
 
     openModal(template: TemplateRef<any>) {
-        this.modalRef = this.modalService.show(template);
+        this.modalRef = this.modalService.show(template,  { class : "modal-dialog-centered"});
     }
 
     ngOnInit(): void {
@@ -241,7 +241,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
             this.prNumber = pr.data.number;
             this.uploadable = false;
             this.isUploading = false;
-            this.modalRef = this.modalService.show(this.modalConfirmPR);
+            this.openModal(this.modalConfirmPR);
           });
     }
 
