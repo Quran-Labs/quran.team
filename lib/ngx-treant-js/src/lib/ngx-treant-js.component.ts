@@ -45,7 +45,9 @@ export class NgxTreantJsComponent implements AfterViewInit {
 
             // add ids to nodeDOMs
             for (let i = 0; i < callback.nodeDB.db.length; i++) {
-                callback.nodeDB.db[i].nodeDOM.id = callback.nodeDB.db[i].id;
+                if(callback.nodeDB.db[i] && callback.nodeDB.db[i].nodeDOM){
+                    callback.nodeDB.db[i].nodeDOM.id = callback.nodeDB.db[i].id;
+                }
             }
 
             this.loadedTree.emit(callback);
@@ -107,7 +109,7 @@ export class NgxTreantJsComponent implements AfterViewInit {
             }
 
             function drag(event) {
-                draggedNode = callback.nodeDB.db.find((n) => n.id == $(this).attr('id'));
+                draggedNode = callback.nodeDB.db.find((n) => n && n.id == $(this).attr('id'));
 
                 hidePopover();
 
@@ -116,7 +118,7 @@ export class NgxTreantJsComponent implements AfterViewInit {
 
             function drop(event) {
                 event.preventDefault();
-                droppedNode = callback.nodeDB.db.find((n) => n.id == $(this).attr('id'));
+                droppedNode = callback.nodeDB.db.find((n) => n && n.id == $(this).attr('id'));
 
                 hidePopover();
 
@@ -189,7 +191,7 @@ export class NgxTreantJsComponent implements AfterViewInit {
             this.isDraggable && addDragAndDropSupport();
 
             $oNodes.off('click').on('click', function (event) {
-                const node = callback.nodeDB.db.find((n) => n.id == $(this).attr('id'));
+                const node = callback.nodeDB.db.find((n) => n && n.id == $(this).attr('id'));
 
                 hidePopover();
 
@@ -199,7 +201,7 @@ export class NgxTreantJsComponent implements AfterViewInit {
             $oNodes.off('dblclick').on('dblclick', function (e) {
                 if ($(event.target).attr('class') !== 'input-field') {
                     e.stopPropagation();
-                    const node = callback.nodeDB.db.find((n) => n.id == $(this).attr('id'));
+                    const node = callback.nodeDB.db.find((n) => n && n.id == $(this).attr('id'));
                     const currentEle = $(event.target);
                     const value = $(event.target).text();
                     const classVal = $(event.target).attr('class');
@@ -224,7 +226,7 @@ export class NgxTreantJsComponent implements AfterViewInit {
 
                         $(this).popover('show');
 
-                        const node = callback.nodeDB.db.find((n) => n.id == $(this).attr('id'));
+                        const node = callback.nodeDB.db.find((n) => n && n.id == $(this).attr('id'));
                         __this.hovered.emit({ node, $ });
 
                         clearTimeout(timeout);
