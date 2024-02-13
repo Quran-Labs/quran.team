@@ -26,23 +26,6 @@
         "image": "assets/pix/3.png"
     },
     {
-        "id": 9,
-        "parent": 2,
-        "HTMLclass": "sahabi",
-        "childrenDropLevel": 1,
-        "text": {
-            "name": "أبو موسى الأشعري"
-        }
-    },
-    {
-        "id": 8,
-        "parent": 2,
-        "HTMLclass": "sahabi",
-        "text": {
-            "name": "أبي بن كعب"
-        }
-    },
-    {
         "id": 3,
         "parent": 2,
         "HTMLclass": "sahabi",
@@ -61,15 +44,6 @@
         }
     },
     {
-        "id": 6,
-        "parent": 2,
-        "HTMLclass": "sahabi",
-        "childrenDropLevel": 1,
-        "text": {
-            "name": "عبد الله بن مسعود"
-        }
-    },
-    {
         "id": 5,
         "parent": 2,
         "HTMLclass": "sahabi",
@@ -79,11 +53,12 @@
         }
     },
     {
-        "id": 12,
-        "parent": 8,
+        "id": 6,
+        "parent": 2,
         "HTMLclass": "sahabi",
+        "childrenDropLevel": 1,
         "text": {
-            "name": "أبو هريرة"
+            "name": "عبد الله بن مسعود"
         }
     },
     {
@@ -96,11 +71,39 @@
         }
     },
     {
-        "id": 15,
+        "id": 8,
+        "parent": 2,
+        "HTMLclass": "sahabi",
+        "text": {
+            "name": "أبي بن كعب"
+        }
+    },
+    {
+        "id": 9,
+        "parent": 2,
+        "HTMLclass": "sahabi",
+        "childrenDropLevel": 1,
+        "text": {
+            "name": "أبو موسى الأشعري"
+        }
+    },
+    {
+        "id": 10,
+        "parent": 6,
+        "HTMLclass": "tabei",
+        "uncles": [
+            4
+        ],
+        "text": {
+            "name": "زر بن حبيش"
+        }
+    },
+    {
+        "id": 12,
         "parent": 8,
         "HTMLclass": "sahabi",
         "text": {
-            "name": "عبد الله بن أبي عياش"
+            "name": "أبو هريرة"
         }
     },
     {
@@ -115,14 +118,11 @@
         }
     },
     {
-        "id": 10,
-        "parent": 6,
-        "HTMLclass": "tabei",
-        "uncles": [
-            4
-        ],
+        "id": 15,
+        "parent": 8,
+        "HTMLclass": "sahabi",
         "text": {
-            "name": "زر بن حبيش"
+            "name": "عبد الله بن أبي عياش"
         }
     },
     {
@@ -143,7 +143,9 @@
     {
         "id": 18,
         "parent": 16,
-        "uncles": [10],
+        "uncles": [
+            10
+        ],
         "childrenDropLevel": 2,
         "HTMLclass": "qari7",
         "text": {
@@ -256,7 +258,6 @@
     {
         "id": 30,
         "parent": 29,
-        "HTMLclass": "addnochild",
         "text": {
             "name": "أحمد النبال"
         }
@@ -272,7 +273,6 @@
     {
         "id": 32,
         "parent": 29,
-        "HTMLclass": "addnochild",
         "text": {
             "name": "عكرمة بن سليمان"
         }
@@ -305,7 +305,6 @@
     {
         "id": 36,
         "parent": 35,
-        "HTMLclass": "addnochild",
         "text": {
             "name": "يحيى بن المبارك"
         }
@@ -392,7 +391,6 @@
         "id": 48,
         "parent": 47,
         "childrenDropLevel": 0,
-        "HTMLclass": "addnochild",
         "text": {
             "name": "سليم بن عيسى"
         }
@@ -426,7 +424,6 @@
     {
         "id": 41,
         "parent": 40,
-        "HTMLclass": "addnochild",
         "text": {
             "name": "يحيى بن الحارث الذماري"
         }
@@ -434,7 +431,6 @@
     {
         "id": 42,
         "parent": 41,
-        "HTMLclass": "addnochild",
         "text": {
             "name": "أيوب بن تميم"
         }
@@ -479,7 +475,6 @@
     {
         "id": 59,
         "parent": 58,
-        "HTMLclass": "addnochild",
         "text": {
             "name": "أبو الأشهب العطارد"
         }
