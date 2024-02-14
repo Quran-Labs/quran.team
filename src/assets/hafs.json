@@ -1,4 +1,4 @@
-[{"HTMLclass":" rawi","id":0,"text":{"name":"حفص"}},
+[{"HTMLclass":"rawi","id":0,"text":{"name":"حفص"}},
  {"id":1,"parent":0,"text":{"name":"عبيد بن الصباح"}},
  {"id":2,"parent":1,"text":{"name":"الأشناني"}},
  {"id":3,"parent":2,"text":{"name":"علي الهاشمي"}},
@@ -17,5 +17,4 @@
  {"id":16,"parent":15,"text":{"name":"الحمّاميّ"}},
  {"id":17,"parent":11,"text":{"name":"ابن خليع"}},
  {"id":18,"parent":16,"text":{"name":"أبي العباس المصري"}},
- {"id":19,"parent":18,"text":{"name":"ابن المعدّل"}},
- {}]
+ {"id":19,"parent":18,"text":{"name":"ابن المعدّل"}}]
