@@ -100,7 +100,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
             text: {
                 name: this.registerForm.value.name || '',
             },
-            id: (window as any).tree.getNodeDb().db.length ,
+            id: (window as any).tree.getNodeDb().maxid+1 ,
             parentId: this.node.id,
         };
         nodeChildren.push(newStudent);
