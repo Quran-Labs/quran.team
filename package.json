@@ -1,6 +1,6 @@
 {
   "name": "quran-team",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Tarek Eldeeb",
   "scripts": {
     "ng": "ng",
@@ -47,7 +47,7 @@
     "svg"
   ],
   "dependencies": {
-    "@ahmed757/ngx-treant-js": "^1.0.4",
+    "@ahmed757/ngx-treant-js": "file:lib/ngx-treant-js",
     "@angular/animations": "^15.2.10",
     "@angular/cdk": "^15.2",
     "@angular/common": "^15.2.10",

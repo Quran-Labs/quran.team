@@ -100,7 +100,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
             text: {
                 name: this.registerForm.value.name || '',
             },
-            id: (window as any).tree.getNodeDb().db.length ,
+            id: (window as any).tree.getNodeDb().maxid+1 ,
             parentId: this.node.id,
         };
         nodeChildren.push(newStudent);
@@ -222,7 +222,8 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
                 /* optional: if `files` is not passed, an empty commit is created instead */
                 files: { // Examples: https://github.com/gr2m/octokit-plugin-create-pull-request
                     [this.svc.getAssetFile(this.tree_name)]: 
-                        `[${this.svc.stripBeforeUpload(this.nodes).map(i => JSON.stringify(i)).join(',\n ')}]`,
+                        `[${this.svc.stripBeforeUpload(this.nodes.filter(e => typeof e != 'string'))
+                            .map(i => JSON.stringify(i)).join(',\n ')}]`,
                 },
                 commit: "إضافة سند",
                 /* optional: if not passed, will be the authenticated user and the current date
