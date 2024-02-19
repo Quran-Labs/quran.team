@@ -10,5 +10,5 @@ jobs:
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
-          INPUT_SCHEMA: ../../src/assets/schema.json
-          INPUT_JSONS: ../../src/assets/hafs.json
+          INPUT_SCHEMA: ${{ github.workspace }}/src/assets/schema.json
+          INPUT_JSONS: ${{ github.workspace }}/src/assets/hafs.json
