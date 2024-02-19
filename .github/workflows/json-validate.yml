@@ -21,4 +21,3 @@ jobs:
         uses: GrantBirki/json-yaml-validate@v2.6.0 # replace with the latest version
         with:
           base_dir: ./src/assets
-          json_schema: ./src/assets/hafs.json
