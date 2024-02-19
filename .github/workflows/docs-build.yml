@@ -1,8 +1,11 @@
 name: Build Docs with NodeJS
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_run:
+    workflows: ["Validate JSONs"]
+    branches: [main]
+    types: 
+      - completed
 
 permissions: write-all
 
