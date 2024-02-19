@@ -9,6 +9,15 @@ on:
 
 permissions:
   contents: read
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   json-yaml-validate:
@@ -21,4 +30,4 @@ jobs:
         uses: GrantBirki/json-yaml-validate@v2.6.0 # replace with the latest version
         with:
           base_dir: ./src/assets
-          #json_schema: ./src/assets/hafs.json
+          json_schema: ./src/assets/hafs.json
