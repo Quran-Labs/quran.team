@@ -10,5 +10,5 @@ jobs:
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
-          INPUT_SCHEMA: ${GITHUB_WORKSPACE}/src/assets/schema.json
-          INPUT_JSONS:  ${GITHUB_WORKSPACE}/src/assets/hafs.json
+          INPUT_SCHEMA: /home/runner/work/quran.team/quran.team/src/assets/schema.json
+          INPUT_JSONS:  /home/runner/work/quran.team/quran.team/src/assets/hafs.json
