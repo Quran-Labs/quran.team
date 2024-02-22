@@ -93,15 +93,29 @@
                     placeholder="أدخل الاسم كما في الإجازة"
                 />
             </div>
-            <div class="form-group">
-                <label for="place">المدينة</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    id="place"
-                    formControlName="place"
-                    placeholder="أدخل المدينة أو البلد"
-                />
+            <div id="form-group2">
+                <div class="form-group">
+                    <label for="place">المدينة</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="place"
+                        formControlName="place"
+                        placeholder="أدخل المدينة أو البلد"
+                    />
+                </div> &nbsp;&nbsp;
+                <div class="form-group">
+                    <label for="place">سنة الوفاة</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="date"
+                        formControlName="date"
+                        placeholder=" التاريخ الهجري للوفاة (يُترك للأحياء)"
+                        ngxDateValidator
+                        [class.is-invalid]="(registerForm.get('date').touched || registerForm.get('date').dirty) && registerForm.get('date').invalid"
+                    />
+                </div>
             </div>
             <div class="form-group">
                 <label for="contact">العنوان الاكتروني</label>
@@ -110,12 +124,12 @@
                     class="form-control"
                     id="contact"
                     formControlName="contact"
-                    placeholder="أدخل عنوان صفحة شخصية أو ايميل"
+                    placeholder="أدخل عنوان صفحة شخصية أو ويكي أو ايميل"
                 />
             </div>
             <div class="form-group">
                 <label for="image">صورة الإجازة</label>
-                <div id="image_uploader">
+                <div id="form-group2">
                     <input
                         type="text"
                         class="form-control"

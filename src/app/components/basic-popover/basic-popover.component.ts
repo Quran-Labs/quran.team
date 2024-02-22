@@ -35,6 +35,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     uploadable = false;
     isUploading = false;
     prNumber = 0;
+    date = '';
 
     private svc: DemoAppService;
     private node;
@@ -72,6 +73,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
     ngAfterViewInit() {
         this.registerForm = this.formBuilder.group({
             place: [''],
+            date:[null],
             name: [''],
             contact: [''],
             image: [''],
@@ -98,11 +100,15 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
             }) : [];
         const newStudent = {
             text: {
-                name: this.registerForm.value.name || '',
+                name: this.registerForm.value.name,
             },
             id: (window as any).tree.getNodeDb().maxid+1 ,
             parentId: this.node.id,
         };
+        if(this.registerForm.value.place) newStudent["place"] = this.registerForm.value.place;
+        if(this.registerForm.value.contact) newStudent["contact"] = this.registerForm.value.contact;
+        if(this.registerForm.value.contact) newStudent["date"] = this.registerForm.value.date;
+
         nodeChildren.push(newStudent);
         const dataNode = this.findNodeByTextName(this.node.text.name);
         if (dataNode) {

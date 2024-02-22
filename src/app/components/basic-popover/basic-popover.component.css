@@ -126,12 +126,12 @@ label {
     vertical-align:middle;
 } 
 
-#image_uploader{
+#form-group2{
     display: flex; /* 2. display flex to the rescue */
     flex-direction: row;
     width: 100%;
 }
-#image_uploader button{
+#form-group2 button{
     width: 35%;
 }
 #image {
