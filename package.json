@@ -61,6 +61,7 @@
     "@angular/router": "^15.2.10",
     "@octokit/core": "^5.0.2",
     "bootstrap": "4.5.0",
+    "hijri-js": "^1.0.25",
     "jquery": "3.5.1",
     "jquery-easing": "0.0.1",
     "ngx-bootstrap": "10.2",
