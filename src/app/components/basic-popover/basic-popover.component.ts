@@ -125,8 +125,6 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
             this.displayChart = true;
             this.uploadable = true;
         });
-
-        console.log(this.registerForm.value);
     }
 
     openModal(template: TemplateRef<any>) {
@@ -145,7 +143,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
         });
         this.tree_name = this.route.snapshot.paramMap.get('id');
         this.basicPopoverData = this.svc.getTreeDataFromLabel(this.tree_name);
-        console.log("Starting with >\n"+ JSON.stringify(this.basicPopoverData.filter((_,i) => i>0)));
+        //console.log("Starting with >\n"+ JSON.stringify(this.basicPopoverData.filter((_,i) => i>0)));
     }
 
     onClick(obj): void {
@@ -156,7 +154,7 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
 
     onUpdate(obj): void {
         this.uploadable = true;
-        console.log('onUpdate: ', obj);
+        //console.log('onUpdate: ', obj);
     }
 
     onHover(event): void {
@@ -185,17 +183,17 @@ export class BasicPopoverComponent implements AfterViewInit, OnInit {
 
     onLoadTree(tree): void {
         this.tree = tree;
-        console.log('tree: ', this.tree);
+        //console.log('tree: ', this.tree);
     }
 
     onLoadTreant(treant): void {
         this.treant = treant;
-        console.log('treant: ', treant);
+        //console.log('treant: ', treant);
     }
 
     onLoadNodes(obj): void {
         this.nodes = obj.nodes;
-        console.log('nodes: ', this.nodes);
+        //console.log('nodes: ', this.nodes);
     }
 
     upload(): void {
