@@ -12,5 +12,3 @@
 /node_modules
 /lib/ngx-treant-js/node_modules
 
-# IDE - VSCode
-.vscode/*
