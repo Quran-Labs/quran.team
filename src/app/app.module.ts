@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { BasicPopoverComponent } from './components/basic-popover/basic-popover.component';
+import { TreeComponent } from './components/tree/tree.component';
 import { NgxTreantJsModule } from '@ahmed757/ngx-treant-js';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
@@ -20,7 +20,7 @@ import { DateValidatorDirective } from './directives/date-validator.directive';
 @NgModule({
     declarations: [
         AppComponent, 
-        BasicPopoverComponent,
+        TreeComponent,
         HeaderComponent,
         SideNavContentComponent,    
         SideNavComponent,

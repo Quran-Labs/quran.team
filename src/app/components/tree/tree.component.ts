@@ -14,12 +14,12 @@ import { Octokit } from "@octokit/core";
 import { createPullRequest, DELETE_FILE } from "octokit-plugin-create-pull-request";
 
 @Component({
-    selector: 'ngx-treant-demo-basic-popover',
-    templateUrl: './basic-popover.component.html',
-    styleUrls: ["../../app.component.css", './basic-popover.component.css'],
+    selector: 'ngx-treant-demo-tree',
+    templateUrl: './tree.component.html',
+    styleUrls: ['../../app.component.css','./tree.component.css'],
     encapsulation: ViewEncapsulation.None,
 })
-export class BasicPopoverComponent implements AfterViewInit, OnInit {
+export class TreeComponent implements AfterViewInit, OnInit {
     modalRef: BsModalRef;
     @ViewChild('template') modalTemplate: TemplateRef<any>;
     @ViewChild('confirm_pr') modalConfirmPR: TemplateRef<any>;

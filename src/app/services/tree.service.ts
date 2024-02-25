@@ -137,7 +137,9 @@ export class DemoAppService {
         }
     }
     stripBeforeUpload(nodes=[]):[any] {
-        const allowed = ['text', 'name', 'data_id', 'parentId', 'nodeHTMLclass', 'pseudo', 'image', 'uncles', 'childrenDropLevel'];
+        const allowed = ['text', 'name', 'data_id', 'parentId', 'nodeHTMLclass', 
+                        'pseudo', 'image', 'uncles', 'childrenDropLevel',
+                        'place', 'contact', 'date'];
         const dict = {
             "data_id": "id",
             "parentId": "parent",
