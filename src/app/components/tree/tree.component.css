@@ -93,6 +93,7 @@ label {
     cursor: pointer;
     min-width: 200px;
     min-height: 100px;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.3);
 }
 
 .popover-title {
