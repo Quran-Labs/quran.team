@@ -145,7 +145,16 @@ export class DemoAppService {
             "parentId": "parent",
             "nodeHTMLclass": "HTMLclass"
           };
-        return nodes.reduce((arr, current) => {
+        var sort_ids = function(a,b){
+            if(a[0] == "id") return -1;
+            if(b[0] == "id") return  1;
+            if(a[0] == "parent") return -1;
+            if(b[0] == "parent") return  1;
+            if(a[0] == "text") return -1;
+            if(b[0] == "text") return  1;
+            return a[0].localeCompare(b[0]);
+        }
+        return nodes.filter(e => typeof e != 'string').reduce((arr, current) => {
             const filtered = Object.keys(current)
                 .filter((key) => allowed.includes(key))
                 .reduce((obj, key) => {
@@ -156,7 +165,7 @@ export class DemoAppService {
                     if(obj["parent"]<0){
                         delete obj["parent"];
                     }
-                    return Object.fromEntries(Object.entries(obj).sort());
+                    return Object.fromEntries(Object.entries(obj).sort(sort_ids));
                 }, {});
             arr.push(filtered)
             return arr.sort((a,b) => a.id - b.id);

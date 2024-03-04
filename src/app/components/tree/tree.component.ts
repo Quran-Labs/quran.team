@@ -197,7 +197,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
     }
 
     upload(): void {
-        this.isUploading = true;
+                this.isUploading = true;
         const MyOctokit = Octokit.plugin(createPullRequest);
          // create token at https://github.com/settings/tokens/new?scopes=repo
         function leftrotate(str, d) {return str.substring(d, str.length) + str.substring(0, d);}
@@ -226,7 +226,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
                 /* optional: if `files` is not passed, an empty commit is created instead */
                 files: { // Examples: https://github.com/gr2m/octokit-plugin-create-pull-request
                     [this.svc.getAssetFile(this.tree_name)]: 
-                        `[${this.svc.stripBeforeUpload(this.nodes.filter(e => typeof e != 'string'))
+                        `[${this.svc.stripBeforeUpload(this.nodes)
                             .map(i => JSON.stringify(i)).join(',\n ')}]`,
                 },
                 commit: "إضافة سند",
