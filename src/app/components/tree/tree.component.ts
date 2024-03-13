@@ -197,7 +197,9 @@ export class TreeComponent implements AfterViewInit, OnInit {
     }
 
     upload(): void {
-                this.isUploading = true;
+        //console.log(this.svc.stripBeforeUpload(this.nodes).map(i => JSON.stringify(i)).join(',\n '));
+        //return;
+        this.isUploading = true;
         const MyOctokit = Octokit.plugin(createPullRequest);
          // create token at https://github.com/settings/tokens/new?scopes=repo
         function leftrotate(str, d) {return str.substring(d, str.length) + str.substring(0, d);}

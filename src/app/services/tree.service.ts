@@ -145,6 +145,7 @@ export class DemoAppService {
             "parentId": "parent",
             "nodeHTMLclass": "HTMLclass"
           };
+        var pseudo_parents = {};
         var sort_ids = function(a,b){
             if(a[0] == "id") return -1;
             if(b[0] == "id") return  1;
@@ -155,7 +156,10 @@ export class DemoAppService {
             return a[0].localeCompare(b[0]);
         }
         return nodes.filter(e => typeof e != 'string').reduce((arr, current) => {
-            const filtered = Object.keys(current)
+            if(current.pseudo){
+                pseudo_parents[current.id] = current.parentId;
+            } else {
+                const filtered = Object.keys(current)
                 .filter((key) => allowed.includes(key))
                 .reduce((obj, key) => {
                     if(current[key] != null && current[key] !== "" && current[key].length !== 0){
@@ -168,7 +172,12 @@ export class DemoAppService {
                     return Object.fromEntries(Object.entries(obj).sort(sort_ids));
                 }, {});
             arr.push(filtered)
+            }
             return arr.sort((a,b) => a.id - b.id);
-        }, [])
+        }, []).map((e,i,arr) => {
+            // Replace pseudo parents with real
+            if(e.parent > arr.length) e.parent = pseudo_parents[e.parent];
+            return e;
+        });
     }
 }
