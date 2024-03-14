@@ -107,7 +107,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
         };
         if(this.registerForm.value.place) newStudent["place"] = this.registerForm.value.place;
         if(this.registerForm.value.contact) newStudent["contact"] = this.registerForm.value.contact;
-        if(this.registerForm.value.contact) newStudent["date"] = this.registerForm.value.date;
+        if(this.registerForm.value.date) newStudent["date"] = this.registerForm.value.date;
 
         nodeChildren.push(newStudent);
         const dataNode = this.findNodeByTextName(this.node.text.name);
