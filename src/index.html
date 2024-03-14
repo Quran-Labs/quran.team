@@ -22,7 +22,14 @@
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-L1PSBLPRNY');
+            gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied'
+            });
+            gtag('config', 'GA_MEASUREMENT_ID', {
+                client_storage: 'none',
+                client_id: 'G-L1PSBLPRNY',
+            });
         </script>
     </head>
     <body>
