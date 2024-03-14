@@ -159,9 +159,9 @@ export class TreeComponent implements AfterViewInit, OnInit {
     }
 
     onClick(obj): void {
-        if(obj.node.nodeHTMLclass.trim() === "rawi"){
+        /*if(obj.node.nodeHTMLclass.trim() === "rawi"){
             this.router.navigate(['/إسناد', obj.node.text.name.replace(/ /g,"_")]);
-        }
+        }*/
     }
 
     onUpdate(obj): void {
