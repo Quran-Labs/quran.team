@@ -11,7 +11,7 @@ import { DemoAppService } from '../../services/tree.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { Octokit } from "@octokit/core";
-import { createPullRequest, DELETE_FILE } from "octokit-plugin-create-pull-request";
+import { createPullRequest } from "octokit-plugin-create-pull-request";
 
 @Component({
     selector: 'ngx-treant-demo-tree',
@@ -44,11 +44,12 @@ export class TreeComponent implements AfterViewInit, OnInit {
     private nodes;
 
     private content = `
-           <div class="popover-content">
-              <div class="btn-group mr-2" role="group">
-                  <a type="button" class="btn btn-primary btn-sm" title="أضف اسم تلميذ في السند" id="add" href="#">أضف تلميذ</a>
-              </div>
-          </div>
+            <div class="popover-content">
+                <div id="hover_node"></div>
+                <div class="btn-group mr-2" role="group">
+                    <a type="button" class="btn btn-primary btn-sm" title="أضف اسم تلميذ في السند" id="add" href="#">أضف تلميذ</a>
+                </div>
+            </div>
       `;
 
     popoverSettings = {
@@ -87,7 +88,18 @@ export class TreeComponent implements AfterViewInit, OnInit {
     findNodeByTextName(textName){
         return this.basicPopoverData.find((n) => !!n.text && n.text.name == textName);
     }
-
+    format_hover($, elem, node){
+        if(node.place){
+            var e = $('<div>🖈 المولود في: ' + node.place + '</div>');
+            elem.append(e);
+            e.attr('id', 'hover_place');
+        }
+        if(node.date){
+            var e = $('<div>◈ المتوفي عام: ' + node.date + ' هـ</div>');
+            elem.append(e);
+            e.attr('id', 'hover_date');
+        }
+    }
     onSubmit() {
         const node = this.nodes.find((n) => n.id == this.node.id);
         const hasChildren = !!node.children && !!node.children.length;
@@ -162,6 +174,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
          (event.node.nodeHTMLclass.trim().match(/^(?:rawi|)$/)) ){
             setTimeout(() => {
                 event.$('.popover-title').text(event.node.text.name);
+                this.format_hover(event.$, event.$('#hover_node'), event.node);
             }, 100);
 
             event
@@ -172,7 +185,6 @@ export class TreeComponent implements AfterViewInit, OnInit {
                 event.$('.popover').popover('hide');
                 this.registerForm.reset();
                 this.openModal(this.modalTemplate);
-
                 e.preventDefault();
                 e.stopPropagation();
             });
