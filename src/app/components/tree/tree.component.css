@@ -80,8 +80,8 @@ label {
 }
 .rawi {
     background-color: #ECCDB4 !important;
+    color: #444;
 }
-
 .Treant > p {
     font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
         'Lucida Grande', sans-serif;
@@ -106,6 +106,10 @@ label {
     z-index: 9999;
     text-align: center;
     min-width: 75px;
+}
+#hover_place, #hover_date{
+    color:#484848;
+    margin-bottom:7px;
 }
 
 .upload-button {
