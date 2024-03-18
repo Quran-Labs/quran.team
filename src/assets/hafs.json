@@ -48,4 +48,5 @@
  {"id":47,"parent":46,"text":{"name":"أبو الجود اللخمي"}},
  {"id":48,"parent":16,"text":{"name":"الحسين الصفار"}},
  {"id":49,"parent":16,"text":{"name":"عبد الملك البغدادي"}},
- {"id":50,"parent":44,"text":{"name":"أيمن سويد"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D9%8A%D9%85%D9%86_%D8%B3%D9%88%D9%8A%D8%AF","place":"دمشق"}]
+ {"id":50,"parent":44,"text":{"name":"أيمن سويد"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D9%8A%D9%85%D9%86_%D8%B3%D9%88%D9%8A%D8%AF","place":"دمشق"},
+ {"id":51,"parent":50,"text":{"name":"asas"},"image_file":true}]
