@@ -136,10 +136,13 @@ export class DemoAppService {
                 return path.concat("top.json");
         }
     }
+    getImageAssetFile(tree_name: string, id: number): string{
+        return "assets/img/"+tree_name+"/"+id+".png";
+    }
     stripBeforeUpload(nodes=[]):[any] {
         const allowed = ['text', 'name', 'data_id', 'parentId', 'nodeHTMLclass', 
                         'pseudo', 'image', 'uncles', 'childrenDropLevel',
-                        'place', 'contact', 'date', 'order'];
+                        'place', 'contact', 'date', 'order', 'image_file'];
         const dict = {
             "data_id": "id",
             "parentId": "parent",
