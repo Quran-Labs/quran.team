@@ -139,7 +139,7 @@ export class DemoAppService {
     stripBeforeUpload(nodes=[]):[any] {
         const allowed = ['text', 'name', 'data_id', 'parentId', 'nodeHTMLclass', 
                         'pseudo', 'image', 'uncles', 'childrenDropLevel',
-                        'place', 'contact', 'date'];
+                        'place', 'contact', 'date', 'order'];
         const dict = {
             "data_id": "id",
             "parentId": "parent",
