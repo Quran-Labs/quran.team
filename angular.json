@@ -1,178 +1,273 @@
 {
-    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-    "version": 1,
-    "newProjectRoot": "projects",
-    "projects": {
-        "quran-team": {
-            "projectType": "application",
-            "schematics": {},
-            "root": "",
-            "sourceRoot": "src",
-            "prefix": "ngx-treant-demo",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
-                    "options": {
-                        "outputPath": "docs",
-                        "index": "src/index.html",
-                        "main": "src/main.ts",
-                        "polyfills": "src/polyfills.ts",
-                        "preserveSymlinks": true,
-                        "tsConfig": "tsconfig.app.json",
-                        "assets": ["src/favicon.ico", "src/assets", "src/sitemap.xml", "src/robots.txt", "src/google154818278e3a4e3b.html"],
-                        "styles": [
-                            "lib/treant-js/Treant.css",
-                            "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.css",
-                            "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                            "src/styles.css"
-                        ],
-                        "scripts": [
-                            "node_modules/jquery/dist/jquery.min.js",
-                            "node_modules/popper.js/dist/umd/popper.js",
-                            "node_modules/bootstrap/dist/js/bootstrap.js",
-                            "lib/treant-js/vendor/jquery.easing.js",
-                            "lib/treant-js/vendor/jquery.mousewheel.js",
-                            "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.js",
-                            "lib/treant-js/vendor/raphael.js",
-                            "lib/treant-js/Treant.js"
-                        ],
-                        "vendorChunk": true,
-                        "extractLicenses": false,
-                        "buildOptimizer": false,
-                        "allowedCommonJsDependencies": [
-                            "before-after-hook",
-                            "once",
-                            "bezier-easing"
-                         ],
-                        "sourceMap": true,
-                        "optimization": false,
-                        "namedChunks": true
-                    },
-                    "configurations": {
-                        "production": {
-                            "fileReplacements": [
-                                {
-                                    "replace": "src/environments/environment.ts",
-                                    "with": "src/environments/environment.prod.ts"
-                                }
-                            ],
-                            "optimization": {
-                                "scripts": true,
-                                "styles": {
-                                  "minify": true,
-                                  "inlineCritical": false
-                                },
-                                "fonts": true
-                              },
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "namedChunks": false,
-                            "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true,
-                            "budgets": [
-                                {
-                                    "type": "initial",
-                                    "maximumWarning": "2mb",
-                                    "maximumError": "5mb"
-                                },
-                                {
-                                    "type": "anyComponentStyle",
-                                    "maximumWarning": "6kb",
-                                    "maximumError": "10kb"
-                                }
-                            ]
-                        }
-                    },
-                    "defaultConfiguration": ""
-                },
-                "serve": {
-                    "builder": "@angular-devkit/build-angular:dev-server",
-                    "options": {
-                        "browserTarget": "quran-team:build"
-                    },
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "quran-team:build:production"
-                        }
-                    }
-                },
-                "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                        "browserTarget": "quran-team:build"
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "src/test.ts",
-                        "polyfills": "src/polyfills.ts",
-                        "tsConfig": "tsconfig.spec.json",
-                        "karmaConfig": "karma.conf.js",
-                        "assets": ["src/favicon.ico", "src/assets", "src/sitemap.xml", "src/robots.txt"],
-                        "styles": [
-                            "lib/treant-js/Treant.css",
-                            "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.css",
-                            "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                            "src/styles.css"
-                        ],
-                        "scripts": [
-                            "node_modules/jquery/dist/jquery.min.js",
-                            "node_modules/popper.js/dist/umd/popper.js",
-                            "node_modules/bootstrap/dist/js/bootstrap.js",
-                            "lib/treant-js/vendor/jquery.easing.js",
-                            "lib/treant-js/vendor/jquery.mousewheel.js",
-                            "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.js",
-                            "lib/treant-js/vendor/raphael.js",
-                            "lib/treant-js/Treant.js"
-                        ]
-                    }
-                },
-                "e2e": {
-                    "builder": "@angular-devkit/build-angular:protractor",
-                    "options": {
-                        "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "quran-team:serve"
-                    },
-                    "configurations": {
-                        "production": {
-                            "devServerTarget": "quran-team:serve:production"
-                        }
-                    }
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "quran-team": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "ngx-treant-demo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "docs",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "preserveSymlinks": true,
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/sitemap.xml",
+              "src/robots.txt",
+              "src/google154818278e3a4e3b.html"
+            ],
+            "styles": [
+              "lib/treant-js/Treant.css",
+              "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "lib/treant-js/vendor/jquery.easing.js",
+              "lib/treant-js/vendor/jquery.mousewheel.js",
+              "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.js",
+              "lib/treant-js/vendor/raphael.js",
+              "lib/treant-js/Treant.js"
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "allowedCommonJsDependencies": [
+              "before-after-hook",
+              "once",
+              "bezier-easing"
+            ],
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
+              ],
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              },
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
             }
+          },
+          "defaultConfiguration": ""
         },
-        "@ahmed757/ngx-treant-js": {
-            "projectType": "library",
-            "root": "lib/ngx-treant-js",
-            "sourceRoot": "lib/ngx-treant-js/src",
-            "prefix": "ngx-treant",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "lib/ngx-treant-js/tsconfig.lib.json",
-                        "project": "lib/ngx-treant-js/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "tsConfig": "lib/ngx-treant-js/tsconfig.lib.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "lib/ngx-treant-js/src/test.ts",
-                        "tsConfig": "lib/ngx-treant-js/tsconfig.spec.json",
-                        "karmaConfig": "lib/ngx-treant-js/karma.conf.js"
-                    }
-                }
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "quran-team:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "quran-team:build:production"
             }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "quran-team:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/sitemap.xml",
+              "src/robots.txt"
+            ],
+            "styles": [
+              "lib/treant-js/Treant.css",
+              "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "lib/treant-js/vendor/jquery.easing.js",
+              "lib/treant-js/vendor/jquery.mousewheel.js",
+              "lib/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.js",
+              "lib/treant-js/vendor/raphael.js",
+              "lib/treant-js/Treant.js"
+            ]
+          }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "quran-team:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "quran-team:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "quran-team:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "quran-team:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "quran-team:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "quran-team:serve:production"
+            }
+          }
         }
+      }
     },
-    "cli": {
-      "analytics": false
+    "@ahmed757/ngx-treant-js": {
+      "projectType": "library",
+      "root": "lib/ngx-treant-js",
+      "sourceRoot": "lib/ngx-treant-js/src",
+      "prefix": "ngx-treant",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "lib/ngx-treant-js/tsconfig.lib.json",
+            "project": "lib/ngx-treant-js/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "lib/ngx-treant-js/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "lib/ngx-treant-js/src/test.ts",
+            "tsConfig": "lib/ngx-treant-js/tsconfig.spec.json",
+            "karmaConfig": "lib/ngx-treant-js/karma.conf.js"
+          }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "@ahmed757/ngx-treant-js:serve",
+            "configFile": "lib/ngx-treant-js/cypress.config.js"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "@ahmed757/ngx-treant-js:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false,
+            "configFile": "lib/ngx-treant-js/cypress.config.js"
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "@ahmed757/ngx-treant-js:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "@ahmed757/ngx-treant-js:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "@ahmed757/ngx-treant-js:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "@ahmed757/ngx-treant-js:serve:production"
+            }
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": false,
+    "schematicCollections": [
+      "@cypress/schematic",
+      "@schematics/angular"
+    ]
+  }
 }
