@@ -62,7 +62,19 @@ label {
 .Treant .node.collapsed .collapse-switch {
     background: none;
 }
-
+.node > .node-order {
+    background-color: #ccc;
+    color: darkslategray;
+    font-size: x-small;
+    position: absolute;
+    right: -12px;
+    top: -1px;
+    height: 32px;
+    width: 13px;
+    border: 1px solid #484848;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
 .wahi {
     background-color: #96c0dc !important;
 }

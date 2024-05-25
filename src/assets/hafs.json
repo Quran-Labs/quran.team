@@ -1,4 +1,4 @@
-[{"id":0,"text":{"name":"حفص"},"date":127,"HTMLclass":"rawi","place":"الكوفة"},
+[{"id":0,"text":{"name":"حفص"},"date":127,"HTMLclass":"rawi","place":"الكوفة","order":4},
  {"id":1,"parent":0,"text":{"name":"عبيد بن الصباح"},"date":219},
  {"id":2,"parent":1,"text":{"name":"الأشناني"},"date":307},
  {"id":3,"parent":2,"text":{"name":"علي الهاشمي"},"date":368},
