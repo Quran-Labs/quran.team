@@ -81,7 +81,7 @@
     "@angular/compiler-cli": "^15.2.10",
     "@angular/language-service": "^15.2.10",
     "@commitlint/cli": "^9.0.1",
-    "@commitlint/config-conventional": "^9.0.1",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/jquery": "^3.3.38",
