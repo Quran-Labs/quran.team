@@ -1,4 +1,4 @@
-[{"id":0,"text":{"name":"حفص"},"date":127,"HTMLclass":"rawi","place":"الكوفة","order":4},
+[{"id":0,"text":{"name":"حفص"},"date":127,"HTMLclass":"rawi","place":"الكوفة"},
  {"id":1,"parent":0,"text":{"name":"عبيد بن الصباح"},"date":219},
  {"id":2,"parent":1,"text":{"name":"الأشناني"},"date":307},
  {"id":3,"parent":2,"text":{"name":"علي الهاشمي"},"date":368},
@@ -57,4 +57,5 @@
  {"id":56,"parent":55,"text":{"name":"زيد حسن الكندي"}},
  {"id":57,"parent":56,"text":{"name":"ابراهيم التميمي"}},
  {"id":58,"parent":13,"text":{"name":"محمد بن عبد الرحمن الصايغ"}},
- {"id":59,"parent":54,"text":{"name":"المبارك الشهرزوني"}}]
+ {"id":59,"parent":54,"text":{"name":"المبارك الشهرزوني"}},
+ {"id":60,"parent":38,"text":{"name":"عبد العزيز عيون السود"},"date":1399}]
