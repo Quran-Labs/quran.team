@@ -1,4 +1,4 @@
-[{"id":0,"text":{"name":"حفص"},"date":127,"HTMLclass":"rawi","place":"الكوفة"},
+[{"id":0,"text":{"name":"حفص"},"date":127,"HTMLclass":"rawi","place":"الكوفة","order":4},
  {"id":1,"parent":0,"text":{"name":"عبيد بن الصباح"},"date":219},
  {"id":2,"parent":1,"text":{"name":"الأشناني"},"date":307},
  {"id":3,"parent":2,"text":{"name":"علي الهاشمي"},"date":368},
@@ -27,7 +27,7 @@
  {"id":26,"parent":13,"text":{"name":"عبد الرحمن بن أحمد البغدادي"},"date":781},
  {"id":27,"parent":14,"text":{"name":"أحمد بن أسد الأميوطي"},"date":872},
  {"id":28,"parent":25,"text":{"name":"شحاذة اليمني"}},
- {"id":29,"parent":28,"text":{"name":"عبد الرحمن اليمني"},"date":1050,"uncles":[36]},
+ {"id":29,"parent":36,"text":{"name":"عبد الرحمن اليمني"},"date":1050,"uncles":[28]},
  {"id":30,"parent":29,"text":{"name":"محمد بن القاسم البقري"},"date":1111},
  {"id":31,"parent":30,"text":{"name":"أحمد بن رجب البقري"},"date":1189},
  {"id":32,"parent":31,"text":{"name":"عبد الرحمن الأجهوري"},"date":1198},
@@ -48,7 +48,7 @@
  {"id":47,"parent":46,"text":{"name":"أبو الجود اللخمي"}},
  {"id":48,"parent":16,"text":{"name":"الحسين الصفار"}},
  {"id":49,"parent":16,"text":{"name":"عبد الملك البغدادي"}},
- {"id":50,"parent":44,"text":{"name":"أيمن سويد"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D9%8A%D9%85%D9%86_%D8%B3%D9%88%D9%8A%D8%AF","place":"دمشق"},
+ {"id":50,"parent":60,"text":{"name":"أيمن سويد"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D9%8A%D9%85%D9%86_%D8%B3%D9%88%D9%8A%D8%AF","place":"دمشق","uncles":[44]},
  {"id":51,"parent":12,"text":{"name":"محمد العطار"}},
  {"id":52,"parent":51,"text":{"name":"عبد الغفار السري"}},
  {"id":53,"parent":52,"text":{"name":"محمد الكارزيني"}},
@@ -58,4 +58,4 @@
  {"id":57,"parent":56,"text":{"name":"ابراهيم التميمي"}},
  {"id":58,"parent":13,"text":{"name":"محمد بن عبد الرحمن الصايغ"}},
  {"id":59,"parent":54,"text":{"name":"المبارك الشهرزوني"}},
- {"id":60,"parent":38,"text":{"name":"عبد العزيز عيون السود"},"date":1399}]
+ {"id":60,"parent":38,"text":{"name":"عبد العزيز عيون السود"},"childrenDropLevel":1,"date":1399}]
