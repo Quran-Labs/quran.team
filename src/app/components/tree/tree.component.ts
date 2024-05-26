@@ -54,7 +54,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
 
     popoverSettings = {
         title: '<div class="popover-title"></div>',
-        placement: 'top',
+        placement: 'bottom',
         content: this.content,
         container: 'body',
         html: true,
@@ -182,14 +182,16 @@ export class TreeComponent implements AfterViewInit, OnInit {
             .off('click')
             .on('click', '#add', (e) => {
                 this.node = event.node;
-                event.$('.popover').popover('hide');
+                //event.$('.popover').popover('hide');
+                event.$(".popover")[0].hidden = true;
                 this.registerForm.reset();
                 this.openModal(this.modalTemplate);
                 e.preventDefault();
                 e.stopPropagation();
             });
         } else {
-            event.$('.popover').popover('hide');
+            //event.$('.popover').popover('hide');
+            event.$(".popover")[0].hidden = true ;
         }
     }
 
