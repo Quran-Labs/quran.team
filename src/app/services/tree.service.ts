@@ -33,7 +33,7 @@ export class DemoAppService {
             container: '#basic-popover',
             scrollbar: "None",
             node: {
-                collapsable: true,
+                collapsable: false,
             },
             animation: {
                 nodeAnimation: 'easeOutBounce',
