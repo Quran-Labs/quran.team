@@ -44,12 +44,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
     private nodes;
 
     private content = `
-            <div class="popover-content">
-                <div id="hover_node"></div>
-                <div class="btn-group mr-2" role="group">
-                    <a type="button" class="btn btn-primary btn-sm" title="أضف اسم تلميذ في السند" id="add" href="#">أضف تلميذ</a>
-                </div>
-            </div>
+            <div class="popover-content"></div>
       `;
 
     popoverSettings = {
@@ -88,17 +83,23 @@ export class TreeComponent implements AfterViewInit, OnInit {
     findNodeByTextName(textName){
         return this.basicPopoverData.find((n) => !!n.text && n.text.name == textName);
     }
-    format_hover($, elem, node){
+    make_hover_content($, elem, node){
+        var hover = $('<div id="hover_node"></div>');
+        elem.append(hover);        
         if(node.place){
-            var e = $('<div>🖈 المولود في: ' + node.place + '</div>');
-            elem.append(e);
+            var e = $('<div>⌂ المولود في: ' + node.place + '</div>');
+            hover.append(e);
             e.attr('id', 'hover_place');
         }
         if(node.date){
             var e = $('<div>◈ المتوفي عام: ' + node.date + ' هـ</div>');
-            elem.append(e);
+            hover.append(e);
             e.attr('id', 'hover_date');
         }
+        var bg = $('<div class="btn-group mr-2" role="group"></div>');
+        elem.append(bg);
+        var e = $('<a type="button" class="btn btn-primary btn-sm" title="أضف اسم تلميذ في السند" id="add" href="#">أضف تلميذ</a>');
+        bg.append(e);
     }
     onSubmit() {
         const node = this.nodes.find((n) => n.id == this.node.id);
@@ -172,10 +173,8 @@ export class TreeComponent implements AfterViewInit, OnInit {
     onHover(event): void {
         if( (this.route.snapshot.params['id'] !== "القرآن") &&
          (event.node.nodeHTMLclass.trim().match(/^(?:rawi|)$/)) ){
-            setTimeout(() => {
-                event.$('.popover-title').text(event.node.text.name);
-                this.format_hover(event.$, event.$('#hover_node'), event.node);
-            }, 100);
+            event.$('.popover-title').text(event.node.text.name);
+            this.make_hover_content(event.$, event.$('.popover-content'), event.node);
 
             event
             .$('.popover')
@@ -189,9 +188,12 @@ export class TreeComponent implements AfterViewInit, OnInit {
                 e.preventDefault();
                 e.stopPropagation();
             });
+        } else if( event.node.nodeHTMLclass.trim().match(/^(?:rawi|)$/)) {
+            event.$('.popover-title').text(event.node.text.name);
+            event.$('.popover-content').text("⊙ اضغط هنا لسند الراوي");
         } else {
-            //event.$('.popover').popover('hide');
-            event.$(".popover")[0].hidden = true ;
+            event.$('.popover-title').text(event.node.text.name);
+            event.$('.popover-content').text("↓ اختر أخفض راوٍ");
         }
     }
 
