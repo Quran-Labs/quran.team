@@ -2,7 +2,10 @@ label {
     float: inline-start;
 }
 .modal-header .close {
-    margin: -1rem auto -1rem -1rem;
+    position: absolute;
+    left: 20px;
+    border: none;
+    font-size: x-large;
 }
 .instructions {
     display: block;
@@ -106,6 +109,10 @@ label {
     min-width: 200px;
     min-height: 100px;
     box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+    opacity: 0.9;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #272727;
 }
 
 .popover-title {
@@ -119,9 +126,11 @@ label {
     text-align: center;
     min-width: 75px;
 }
+#hover_node{
+    padding-bottom: 10px;
+}
 #hover_place, #hover_date{
     color:#484848;
-    margin-bottom:7px;
 }
 
 .upload-button {
@@ -150,6 +159,9 @@ label {
 }
 #form-group2 button{
     width: 35%;
+}
+.form-group, .form-group2{
+    padding-bottom: 10px;
 }
 #image {
     margin-left: 10px;

@@ -34,7 +34,7 @@
         "@angular/common": "^15.2.10",
         "@angular/core": "^15.2.10",
         "popper": "^1.0.1",
-        "popper.js": "^1.16.1",
+        "popperjs": ">= 2",
         "jquery": "^3.5.1",
         "jquery-easing": "0.0.1",
         "treant-js": "^1.0.1"
