@@ -42,6 +42,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
     private tree;
     private treant;
     private nodes;
+    protected selectedNodeName;
 
     private content = `
             <div class="popover-content"></div>
@@ -184,6 +185,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
                 //event.$('.popover').popover('hide');
                 event.$(".popover")[0].hidden = true;
                 this.registerForm.reset();
+                this.selectedNodeName = event.node.text.name;
                 this.openModal(this.modalTemplate);
                 e.preventDefault();
                 e.stopPropagation();

@@ -4,8 +4,11 @@ label {
 .modal-header .close {
     position: absolute;
     left: 20px;
-    border: none;
+    border-radius: 10px;
     font-size: x-large;
+}
+.modal-title {
+    padding-right: 70px;
 }
 .instructions {
     display: block;
@@ -170,7 +173,7 @@ label {
     background-color: #cfcfcf;
     background-image: url("/assets/pix/node-tree.svg");
     background-repeat: no-repeat;
-    background-position: bottom left 25%;
+    background-position: bottom right;
 }
 
 #confirm_pr{
