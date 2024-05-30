@@ -169,6 +169,9 @@ export class DemoAppService {
                     if(obj["parent"]<0){
                         delete obj["parent"];
                     }
+                    if(obj["HTMLclass"] != "rawi"){
+                        delete obj["order"];
+                    }
                     return Object.fromEntries(Object.entries(obj).sort(sort_ids));
                 }, {});
             arr.push(filtered)
