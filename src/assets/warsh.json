@@ -1,24 +1,4 @@
-[
-  {
-    "id":0,
-    "HTMLclass":"rawi",
-    "text":{
-      "name":"ورش"
-    },
-    "order": 5
-  },
- {
-    "id":1,
-    "parent":0,
-    "text":{
-      "name":"ابو يعقوب الأزرق"
-    }
-  },
-  {
-    "id":2,
-    "parent":0,
-    "text":{
-      "name":"محمد الأصبهاني"
-    }
-  }
-]
+[{"id":0,"text":{"name":"ورش"},"HTMLclass":"rawi"},
+ {"id":1,"parent":0,"text":{"name":"ابو يعقوب الأزرق"}},
+ {"id":2,"parent":0,"text":{"name":"محمد الأصبهاني"}},
+ {"id":3,"parent":2,"text":{"name":"test"}}]
