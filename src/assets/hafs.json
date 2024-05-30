@@ -1,4 +1,4 @@
-[{"id":0,"text":{"name":"حفص"},"date":127,"HTMLclass":"rawi","place":"الكوفة","order":4},
+[{"id":0,"text":{"name":"حفص"},"date":127,"HTMLclass":"rawi","place":"الكوفة"},
  {"id":1,"parent":0,"text":{"name":"عبيد بن الصباح"},"date":219},
  {"id":2,"parent":1,"text":{"name":"الأشناني"},"date":307},
  {"id":3,"parent":2,"text":{"name":"علي الهاشمي"},"date":368},
@@ -58,4 +58,6 @@
  {"id":57,"parent":56,"text":{"name":"ابراهيم التميمي"}},
  {"id":58,"parent":13,"text":{"name":"محمد بن عبد الرحمن الصايغ"}},
  {"id":59,"parent":54,"text":{"name":"المبارك الشهرزوني"}},
- {"id":60,"parent":38,"text":{"name":"عبد العزيز عيون السود"},"childrenDropLevel":1,"date":1399}]
+ {"id":60,"parent":38,"text":{"name":"عبد العزيز عيون السود"},"childrenDropLevel":1,"date":1399},
+ {"id":61,"parent":44,"text":{"name":"عبد الحكيم عبد اللطيف"},"contact":"https://ar.m.wikipedia.org/wiki/%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D8%AD%D9%83%D9%8A%D9%85_%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D9%84%D8%B7%D9%8A%D9%81","date":1437,"place":"القاهرة"},
+ {"id":62,"parent":39,"text":{"name":"أحمد عيسى المعصراوي"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D8%AD%D9%85%D8%AF_%D8%B9%D9%8A%D8%B3%D9%89_%D8%A7%D9%84%D9%85%D8%B9%D8%B5%D8%B1%D8%A7%D9%88%D9%8A","place":"القاهرة"}]
