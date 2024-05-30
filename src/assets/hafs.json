@@ -38,7 +38,7 @@
  {"id":37,"parent":34,"text":{"name":"أحمد الحلواني الكبير"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%AD%D9%84%D9%88%D8%A7%D9%86%D9%8A_%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1","date":1307,"place":"دمشق"},
  {"id":38,"parent":37,"text":{"name":"محمد سليم الحلواني"},"contact":"https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF_%D8%B3%D9%84%D9%8A%D9%85_%D8%A7%D9%84%D8%AD%D9%84%D9%88%D8%A7%D9%86%D9%8A","date":1363,"place":"دمشق"},
  {"id":39,"parent":38,"text":{"name":"عبد العزيز عيون السود"},"childrenDropLevel":2,"date":1399},
- {"id":40,"parent":39,"text":{"name":"أيمن سويد"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D9%8A%D9%85%D9%86_%D8%B3%D9%88%D9%8A%D8%AF","place":"دمشق","uncles":[44]},
+ {"id":40,"parent":72,"text":{"name":"أيمن سويد"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D9%8A%D9%85%D9%86_%D8%B3%D9%88%D9%8A%D8%AF","place":"دمشق","uncles":[44]},
  {"id":41,"parent":50,"text":{"name":"أحمد الدري التهامي"},"date":1269},
  {"id":42,"parent":41,"text":{"name":"محمد بن أحمد المتولي"},"date":1313},
  {"id":43,"parent":42,"text":{"name":"عبد الفتاح هنيدي"},"date":1369,"place":"مصر"},
@@ -60,4 +60,9 @@
  {"id":59,"parent":54,"text":{"name":"المبارك الشهرزوني"}},
  {"id":60,"parent":44,"text":{"name":"عبد الحكيم عبد اللطيف"},"contact":"https://ar.m.wikipedia.org/wiki/%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D8%AD%D9%83%D9%8A%D9%85_%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D9%84%D8%B7%D9%8A%D9%81","date":1437,"place":"القاهرة"},
  {"id":61,"parent":38,"text":{"name":"بكري الطرابيشي"},"childrenDropLevel":2,"contact":"https://ar.wikipedia.org/wiki/%D8%A8%D9%83%D8%B1%D9%8A_%D8%A7%D9%84%D8%B7%D8%B1%D8%A7%D8%A8%D9%8A%D8%B4%D9%8A","date":1433,"place":"دمشق"},
- {"id":62,"parent":61,"text":{"name":"أحمد عيسى المعصراوي"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D8%AD%D9%85%D8%AF_%D8%B9%D9%8A%D8%B3%D9%89_%D8%A7%D9%84%D9%85%D8%B9%D8%B5%D8%B1%D8%A7%D9%88%D9%8A","place":"القاهرة","uncles":[60]}]
+ {"id":62,"parent":74,"text":{"name":"أحمد عيسى المعصراوي"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D8%AD%D9%85%D8%AF_%D8%B9%D9%8A%D8%B3%D9%89_%D8%A7%D9%84%D9%85%D8%B9%D8%B5%D8%B1%D8%A7%D9%88%D9%8A","place":"القاهرة","uncles":[60]},
+ {"id":63,"parent":30,"text":{"name":"يوسف أفندي زاده"}},
+ {"id":64,"parent":63,"text":{"name":"علي بن حسن البدري"}},
+ {"id":65,"parent":64,"text":{"name":"سالم اللبتيتي"}},
+ {"id":66,"parent":65,"text":{"name":"مصطفى بن علي الميهي"}},
+ {"id":67,"parent":66,"text":{"name":"علي الجوهري المرحومي"}}]
