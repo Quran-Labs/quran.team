@@ -1,4 +1,4 @@
-[{"id":0,"text":{"name":"حفص"},"date":127,"HTMLclass":"rawi","place":"الكوفة","order":4},
+[{"id":0,"text":{"name":"حفص"},"date":127,"HTMLclass":"rawi","order":4,"place":"الكوفة"},
  {"id":1,"parent":0,"text":{"name":"عبيد بن الصباح"},"date":219},
  {"id":2,"parent":1,"text":{"name":"الأشناني"},"date":307},
  {"id":3,"parent":2,"text":{"name":"علي الهاشمي"},"date":368},
@@ -48,7 +48,7 @@
  {"id":47,"parent":46,"text":{"name":"أبو الجود اللخمي"}},
  {"id":48,"parent":16,"text":{"name":"الحسين الصفار"}},
  {"id":49,"parent":16,"text":{"name":"عبد الملك البغدادي"}},
- {"id":50,"parent":39,"text":{"name":"أيمن سويد"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D9%8A%D9%85%D9%86_%D8%B3%D9%88%D9%8A%D8%AF","place":"دمشق","uncles":[44]},
+ {"id":50,"parent":68,"text":{"name":"أيمن سويد"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D9%8A%D9%85%D9%86_%D8%B3%D9%88%D9%8A%D8%AF","place":"دمشق","uncles":[44]},
  {"id":51,"parent":12,"text":{"name":"محمد العطار"}},
  {"id":52,"parent":51,"text":{"name":"عبد الغفار السري"}},
  {"id":53,"parent":52,"text":{"name":"محمد الكارزيني"}},
@@ -60,4 +60,5 @@
  {"id":59,"parent":54,"text":{"name":"المبارك الشهرزوني"}},
  {"id":60,"parent":38,"text":{"name":"بكري الطرابيشي"},"childrenDropLevel":2,"contact":"https://ar.wikipedia.org/wiki/%D8%A8%D9%83%D8%B1%D9%8A_%D8%A7%D9%84%D8%B7%D8%B1%D8%A7%D8%A8%D9%8A%D8%B4%D9%8A","date":1433,"place":"دمشق"},
  {"id":61,"parent":44,"text":{"name":"عبد الحكيم عبد اللطيف"},"contact":"https://ar.m.wikipedia.org/wiki/%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D8%AD%D9%83%D9%8A%D9%85_%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D9%84%D8%B7%D9%8A%D9%81","date":1437,"place":"القاهرة"},
- {"id":62,"parent":60,"text":{"name":"أحمد عيسى المعصراوي"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D8%AD%D9%85%D8%AF_%D8%B9%D9%8A%D8%B3%D9%89_%D8%A7%D9%84%D9%85%D8%B9%D8%B5%D8%B1%D8%A7%D9%88%D9%8A","place":"القاهرة","uncles":[61]}]
+ {"id":62,"parent":70,"text":{"name":"أحمد عيسى المعصراوي"},"contact":"https://ar.wikipedia.org/wiki/%D8%A3%D8%AD%D9%85%D8%AF_%D8%B9%D9%8A%D8%B3%D9%89_%D8%A7%D9%84%D9%85%D8%B9%D8%B5%D8%B1%D8%A7%D9%88%D9%8A","place":"القاهرة","uncles":[61]},
+ {"id":63,"parent":2,"text":{"name":"أبي طاهر"}}]
