@@ -155,9 +155,13 @@ export class DemoAppService {
             if(b[0] == "text") return  1;
             return a[0].localeCompare(b[0]);
         }
-        return nodes.filter(e => typeof e != 'string').reduce((arr, current) => {
-            if(current.pseudo){
-                pseudo_parents[current.id] = current.parentId;
+        return nodes.filter(e => typeof e != 'string').reduce((arr, current, _, nodes) => {
+            if (current.pseudo) { //Look recursively for the real parent when dropLevel
+                var tmp_parent = current.parentId;
+                while(nodes[tmp_parent].pseudo && nodes[tmp_parent].id != 0){
+                    tmp_parent = nodes[tmp_parent-1].parentId; // Account for missing separator
+                }
+                pseudo_parents[current.id] = tmp_parent;
             } else {
                 const filtered = Object.keys(current)
                 .filter((key) => allowed.includes(key))
