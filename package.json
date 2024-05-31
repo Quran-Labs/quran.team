@@ -1,6 +1,6 @@
 {
   "name": "quran-team",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "Tarek Eldeeb",
   "scripts": {
     "ng": "ng",

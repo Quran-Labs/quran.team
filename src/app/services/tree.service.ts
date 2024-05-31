@@ -136,8 +136,11 @@ export class DemoAppService {
                 return path.concat("top.json");
         }
     }
-    getImageAssetFile(tree_name: string, id: number): string{
-        return "assets/img/"+tree_name+"/"+id;
+    getExtension(file_mime: string): string{
+        return file_mime.split('/')[1];
+    }
+    getImageAssetFile(tree_name: string, id: number, file_mime: string): string{
+        return "assets/img/"+tree_name+"/"+id+"."+this.getExtension(file_mime);
     }
     stripBeforeUpload(nodes=[]):[any] {
         const allowed = ['text', 'name', 'data_id', 'parentId', 'nodeHTMLclass', 

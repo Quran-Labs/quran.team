@@ -122,7 +122,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
         if(this.registerForm.value.place) newStudent["place"] = this.registerForm.value.place;
         if(this.registerForm.value.contact) newStudent["contact"] = this.registerForm.value.contact;
         if(this.registerForm.value.date) newStudent["date"] = this.registerForm.value.date;
-        if(this.registerForm.value.image_file) newStudent["image_file"] = true;
+        if(this.registerForm.value.image_file) newStudent["image_file"] = this.svc.getExtension(this.registerForm.value.image_file.split(';')[0]);
 
         nodeChildren.push(newStudent);
         const dataNode = this.findNodeByTextName(this.node.text.name);
@@ -227,6 +227,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
           auth: TOKKEN,
         });
         
+        var image_mime = this.registerForm.value.image_file.split(';')[0];
         // Returns a normal Octokit PR response
         // See https://octokit.github.io/rest.js/#octokit-routes-pulls-create
         octokit
@@ -249,7 +250,9 @@ export class TreeComponent implements AfterViewInit, OnInit {
                     [this.svc.getAssetFile(this.tree_name)]: 
                         `[${this.svc.stripBeforeUpload(this.nodes)
                             .map(i => JSON.stringify(i)).join(',\n ')}]`,
-                    [this.svc.getImageAssetFile(this.tree_name,(window as any).tree.getNodeDb().maxid)]: {
+                    [this.svc.getImageAssetFile(this.tree_name,
+                                                (window as any).tree.getNodeDb().maxid,
+                                                image_mime )]: {
                         content: this.registerForm.value.image_file.split(',')[1],
                         encoding: "base64",
                       }
