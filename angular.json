@@ -24,7 +24,8 @@
               "src/assets",
               "src/sitemap.xml",
               "src/robots.txt",
-              "src/google154818278e3a4e3b.html"
+              "src/google154818278e3a4e3b.html",
+              "src/launch_local.sh.bat"
             ],
             "styles": [
               "lib/treant-js/Treant.css",
