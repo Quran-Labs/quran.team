@@ -137,7 +137,7 @@ export class DemoAppService {
         }
     }
     getImageAssetFile(tree_name: string, id: number): string{
-        return "assets/img/"+tree_name+"/"+id+".png";
+        return "assets/img/"+tree_name+"/"+id;
     }
     stripBeforeUpload(nodes=[]):[any] {
         const allowed = ['text', 'name', 'data_id', 'parentId', 'nodeHTMLclass', 

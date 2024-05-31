@@ -250,7 +250,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
                         `[${this.svc.stripBeforeUpload(this.nodes)
                             .map(i => JSON.stringify(i)).join(',\n ')}]`,
                     [this.svc.getImageAssetFile(this.tree_name,(window as any).tree.getNodeDb().maxid)]: {
-                        content: this.registerForm.value.image_file,
+                        content: this.registerForm.value.image_file.split(',')[1],
                         encoding: "base64",
                       }
                 },
