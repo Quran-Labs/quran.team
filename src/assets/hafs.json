@@ -66,4 +66,5 @@
  {"id":65,"parent":64,"text":{"name":"سالم اللبتيتي"}},
  {"id":66,"parent":65,"text":{"name":"مصطفى بن علي الميهي"}},
  {"id":67,"parent":66,"text":{"name":"علي الجوهري المرحومي"}},
- {"id":68,"parent":2,"text":{"name":"أبي طاهر"}}]
+ {"id":68,"parent":2,"text":{"name":"أبي طاهر"}},
+ {"id":69,"parent":62,"text":{"name":"محمد ددو"},"image_file":true}]
