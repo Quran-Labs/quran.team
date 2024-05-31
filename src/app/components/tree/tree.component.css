@@ -14,11 +14,13 @@ label {
     display: block;
     text-align: right;
     width: 280px;
+    height: 200px;
     background-color: cornsilk;
     padding: 25px;
     margin: 25px;
     position: absolute;
     border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.2);
 }
 .instructions > table{
     width: 100%;
@@ -34,6 +36,9 @@ label {
 }
 .instructions td > div {
     border-radius: 5px;
+}
+.instructions table tr td div {
+    padding-right: 7px;
 }
 .instructions svg {
     padding-bottom: 20px;
