@@ -185,6 +185,15 @@
               "devServerTarget": "quran-team:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -260,6 +269,15 @@
               "devServerTarget": "@ahmed757/ngx-treant-js:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "lib/ngx-treant-js/**/*.ts",
+              "lib/ngx-treant-js/**/*.html"
+            ]
+          }
         }
       }
     }
@@ -267,6 +285,7 @@
   "cli": {
     "analytics": false,
     "schematicCollections": [
+      "@angular-eslint/schematics",
       "@cypress/schematic",
       "@schematics/angular"
     ]
