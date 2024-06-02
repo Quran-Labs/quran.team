@@ -85,6 +85,7 @@ label {
     border: 1px solid #484848;
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
+    pointer-events: none;
 }
 .wahi {
     background-color: #96c0dc !important;
