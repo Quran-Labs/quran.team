@@ -67,4 +67,5 @@
  {"id":66,"parent":65,"text":{"name":"مصطفى بن علي الميهي"}},
  {"id":67,"parent":66,"text":{"name":"علي الجوهري المرحومي"}},
  {"id":68,"parent":2,"text":{"name":"أبي طاهر"}},
- {"id":69,"parent":62,"text":{"name":"محمد الحسن الددو"},"contact":"https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%AD%D8%B3%D9%86_%D9%88%D9%84%D8%AF_%D8%A7%D9%84%D8%AF%D8%AF%D9%88","image_file":"jpeg","place":"موريتانيا"}]
+ {"id":69,"parent":62,"text":{"name":"محمد الحسن الددو"},"contact":"https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%AD%D8%B3%D9%86_%D9%88%D9%84%D8%AF_%D8%A7%D9%84%D8%AF%D8%AF%D9%88","image_file":"jpeg","place":"موريتانيا"},
+ {"id":70,"parent":59,"text":{"name":"test name "}}]
