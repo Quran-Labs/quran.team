@@ -7,11 +7,9 @@ import {
     AfterViewInit,
 } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd  } from '@angular/router'
-import { DemoAppService } from '../../services/tree.service';
+import { TreeService } from '../../services/tree.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
-import { Octokit } from "@octokit/core";
-import { createPullRequest } from "octokit-plugin-create-pull-request";
 
 @Component({
     selector: 'ngx-treant-demo-tree',
@@ -32,12 +30,9 @@ export class TreeComponent implements AfterViewInit, OnInit {
     basicPopoverData;
     tree_name;
     displayChart = true;
-    uploadable = false;
-    isUploading = false;
     prNumber = 0;
     date = '';
 
-    private svc: DemoAppService;
     private node;
     private tree;
     private treant;
@@ -63,9 +58,9 @@ export class TreeComponent implements AfterViewInit, OnInit {
         private router: Router,
         private modalService: BsModalService,
         private formBuilder: UntypedFormBuilder,
-    ) {
-        this.svc = new DemoAppService();
-    }
+        private treeService: TreeService
+
+    ) {}
 
     ngAfterViewInit() {
         this.registerForm = this.formBuilder.group({
@@ -122,7 +117,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
         if(this.registerForm.value.place) newStudent["place"] = this.registerForm.value.place;
         if(this.registerForm.value.contact) newStudent["contact"] = this.registerForm.value.contact;
         if(this.registerForm.value.date) newStudent["date"] = this.registerForm.value.date;
-        if(this.registerForm.value.image_file) newStudent["image_file"] = this.svc.getExtension(this.registerForm.value.image_file.split(';')[0]);
+        if(this.registerForm.value.image_file) newStudent["image_file"] = this.treeService.getExtension(this.registerForm.value.image_file.split(';')[0]);
 
         nodeChildren.push(newStudent);
         const dataNode = this.findNodeByTextName(this.node.text.name);
@@ -138,7 +133,9 @@ export class TreeComponent implements AfterViewInit, OnInit {
 
         setTimeout(() => {
             this.displayChart = true;
-            this.uploadable = true;
+            setTimeout(() => {
+                this.setPrData();
+            });
         });
     }
 
@@ -157,7 +154,13 @@ export class TreeComponent implements AfterViewInit, OnInit {
             }
         });
         this.tree_name = this.route.snapshot.paramMap.get('id');
-        this.basicPopoverData = this.svc.getTreeDataFromLabel(this.tree_name);
+        this.basicPopoverData = this.treeService.getTreeDataFromLabel(this.tree_name);
+        this.treeService.PrNumber$.subscribe((n)=>{
+            if(n>0){
+                this.prNumber = n;
+                this.openModal(this.modalConfirmPR);
+            }
+        })
         //console.log("Starting with >\n"+ JSON.stringify(this.basicPopoverData.filter((_,i) => i>0)));
     }
 
@@ -168,7 +171,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
     }
 
     onUpdate(obj): void {
-        this.uploadable = true;
+        this.setPrData();
         //console.log('onUpdate: ', obj);
     }
 
@@ -214,70 +217,18 @@ export class TreeComponent implements AfterViewInit, OnInit {
         this.nodes = obj.nodes;
         //console.log('nodes: ', this.nodes);
     }
-
-    upload(): void {
-        //console.log(this.svc.stripBeforeUpload(this.nodes).map(i => JSON.stringify(i)).join(',\n '));
-        //return;
-        this.isUploading = true;
-        const MyOctokit = Octokit.plugin(createPullRequest);
-         // create token at https://github.com/settings/tokens/new?scopes=repo
-        function leftrotate(str, d) {return str.substring(d, str.length) + str.substring(0, d);}
-        const TOKKEN = leftrotate('6vGn1kZ2jBlpXghp_GlaYBY4CiyryCKIEMCeGrRNXghp_GlaYB'.slice(0,-10),13);
-        const octokit = new MyOctokit({
-          auth: TOKKEN,
+    private setPrData(): void{
+        var image_content = this.registerForm.value.image_file ? this.registerForm.value.image_file.split(',')[1] : "";
+        var image_mime = this.registerForm.value.image_file ? this.registerForm.value.image_file.split(';')[0] : "";
+        this.treeService.setPrData({
+            tree_name: this.tree_name,
+            nodes: this.nodes,
+            max_id: (window as any).tree.getNodeDb().maxid,
+            image_mime: image_mime,
+            image_content: image_content,
         });
-        
-        var image_mime = this.registerForm.value.image_file.split(';')[0];
-        // Returns a normal Octokit PR response
-        // See https://octokit.github.io/rest.js/#octokit-routes-pulls-create
-        octokit
-          .createPullRequest({
-            owner: "Quran-Labs",
-            repo: "quran.team",
-            title: "إضافة من أحد الزوار، قيد المراجعة",
-            body: "تاريخ الطلب " + new Date(),
-            head: "user-auto-pr-" + new Date().valueOf(),
-            base: "main" /* optional: defaults to default branch */,
-            update: false /* optional: set to `true` to enable updating existing pull requests */,
-            forceFork: false /* optional: force creating fork even when user has write rights */,
-            labels: [
-              this.tree_name,
-            ], /* optional: applies the given labels when user has permissions. When updating an existing pull request, already present labels will not be deleted. */
-            changes: [
-              {
-                /* optional: if `files` is not passed, an empty commit is created instead */
-                files: { // Examples: https://github.com/gr2m/octokit-plugin-create-pull-request
-                    [this.svc.getAssetFile(this.tree_name)]: 
-                        `[${this.svc.stripBeforeUpload(this.nodes)
-                            .map(i => JSON.stringify(i)).join(',\n ')}]`,
-                    [this.svc.getImageAssetFile(this.tree_name,
-                                                (window as any).tree.getNodeDb().maxid,
-                                                image_mime )]: {
-                        content: this.registerForm.value.image_file.split(',')[1],
-                        encoding: "base64",
-                      }
-                },
-                commit: "إضافة سند",
-                /* optional: if not passed, will be the authenticated user and the current date
-                author: { name: "Author LastName", email: "Author.LastName@acme.com", date: new Date().toISOString(),
-                }, */
-                /* optional: if not passed, will use the information set in author */
-                committer: {
-                  name: "Auto",
-                  email: "no-reply@quran.team",
-                  date: new Date().toISOString(), // must be ISO date string
-                },
-              },
-            ],
-          })
-          .then((pr) => {
-            this.prNumber = pr.data.number;
-            this.uploadable = false;
-            this.isUploading = false;
-            this.openModal(this.modalConfirmPR);
-          });
+        this.treeService.setUploadable(true);
     }
-
     onImagePicked(event: Event) {
         const file = (event.target as HTMLInputElement).files[0];
         if (file) {

@@ -61,16 +61,6 @@
     </ngx-treant-chart>
 </div>
 
-<button type="button" class="upload-button" *ngIf="uploadable" aria-label="Upload" [disabled]="isUploading" (click)="upload()">
-    <ng-container *ngIf="isUploading; else elseNotUploading">
-        <span class="material-icons">sync</span>
-    </ng-container>
-    <ng-template #elseNotUploading>
-        <span class="material-icons">check</span>
-    </ng-template>
-    <span>ارفع البيانات</span>
-</button>
-
 <ng-template #template>
     <div class="modal-header">
         <h2 class="modal-title"> أضف تلميذاً إلى: {{selectedNodeName}}</h2>

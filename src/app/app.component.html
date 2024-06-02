@@ -1,8 +1,7 @@
 <div class="container-fluid p-0">
-  <app-header> 
-  </app-header> 
+  <app-header
+    [headerTemplateRef]="headerContent"></app-header>
 </div>
-
 
 <app-side-nav 
   [sidenavTemplateRef]="navContent"
@@ -17,6 +16,9 @@
   </section>
 </div>
 
+<ng-template #headerContent>
+  <app-header-content></app-header-content>
+</ng-template>
 <ng-template #navContent>
   <app-side-nav-content></app-side-nav-content>
 </ng-template>

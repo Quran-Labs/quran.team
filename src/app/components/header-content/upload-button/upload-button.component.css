@@ -1,0 +1,13 @@
+.upload-button {
+    padding: 5px;
+    background: cornsilk;
+    border-radius: 10px;
+    box-shadow: 3px 6px 12px -2px black;
+}
+.upload-button:hover{
+    border: 1px solid black;
+}
+.upload-button >span{
+    vertical-align:middle;
+    padding: 5px;
+} 

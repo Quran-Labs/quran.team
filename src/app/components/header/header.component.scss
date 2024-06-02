@@ -1,4 +1,6 @@
 .header-menu{
+    display: flex;
+    flex-direction: row;
     text-align: right;
     height: 70px;
 }
@@ -15,10 +17,15 @@
 }
 .navbar-brand{
     position: relative;
-    bottom: 10px;
     right: 10px;
 }
 .navbar-brand h1{
   color: white;
   display: inline-block;
+}
+
+.header-content-container{
+    position: absolute;
+    left: 10px;
+    top: 10px;
 }

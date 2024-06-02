@@ -1,0 +1,11 @@
+<div class="upload-button-container">
+    <button type="button" class="upload-button" *ngIf="uploadable" aria-label="Upload" [disabled]="isUploading" (click)="upload()">
+        <ng-container *ngIf="isUploading; else elseNotUploading">
+            <span class="material-icons">sync</span>
+        </ng-container>
+        <ng-template #elseNotUploading>
+            <span class="material-icons">check</span>
+        </ng-template>
+        <span>ارفع البيانات</span>
+    </button>
+</div>

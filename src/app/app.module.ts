@@ -16,6 +16,7 @@ import { OperationsPageComponent } from './pages/operations-page/operations-page
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { DateValidatorDirective } from './directives/date-validator.directive';
+import { UploadButtonComponent } from './components/header-content/upload-button/upload-button.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { DateValidatorDirective } from './directives/date-validator.directive';
         SideNavComponent,
         OperationsPageComponent,
         ContactPageComponent,
-        DateValidatorDirective
+        DateValidatorDirective,
+        UploadButtonComponent
     ],
     imports: [
         BrowserModule,

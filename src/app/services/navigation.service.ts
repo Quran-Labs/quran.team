@@ -15,8 +15,7 @@ export class NavigationService implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   getShowNav(){
     return this.showNav$.asObservable();

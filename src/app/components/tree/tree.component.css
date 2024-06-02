@@ -140,26 +140,6 @@ label {
 #hover_place, #hover_date{
     color:#484848;
 }
-
-.upload-button {
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    font-size: large;
-    padding: 15px;
-    background: #007BFF;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    box-shadow: 3px 6px 12px -2px black;
-}
-.upload-button:hover{
-    border: 1px solid black;
-
-}
-.upload-button >span{
-    vertical-align:middle;
-} 
-
 #form-group2{
     display: flex; /* 2. display flex to the rescue */
     flex-direction: row;

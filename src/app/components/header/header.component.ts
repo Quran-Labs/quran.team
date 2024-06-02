@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { TreeService } from 'src/app/services/tree.service';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,10 @@ import { NavigationService } from 'src/app/services/navigation.service';
   encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent implements OnInit {
+  @Input() headerTemplateRef: any;
 
-  constructor( private navService: NavigationService ) { }
+  constructor( private navService: NavigationService ,
+    private treeService: TreeService ) { }
 
   ngOnInit(): void {
   }
