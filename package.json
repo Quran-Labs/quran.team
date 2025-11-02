@@ -1,12 +1,12 @@
 {
   "name": "quran-team",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "author": "Tarek Eldeeb",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build-lib": "ng build @ahmed757/ngx-treant-js",
-    "build": "npm run build-lib && ng build --base-href / --configuration production && git checkout -- docs/CNAME",
+    "build": "npm run build-lib && ng build --base-href /quran.team/ --configuration production",
     "clean": "rm -rf ./dist & rm -rf node_modules & npm cache clean --force",
     "test": "ng test",
     "lint": "ng lint",
